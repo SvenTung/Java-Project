@@ -1,5 +1,7 @@
 import React, {Component, Fragment} from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import Option from '../components/Option.js'
+import RockPaperScissors from  '../components/RockPaperScissors'
 
 class RpsContainer extends Component {
   constructor(props){
@@ -36,6 +38,7 @@ class RpsContainer extends Component {
       <div className="main-content">
         <p>Rock Paper Scissors!</p>
         <img src="/assets/gameboy.svg" style={{height: "92vh"}}/>
+        <RockPaperScissors/>
       </div>
     )
   }

@@ -1,17 +1,24 @@
-import React from 'react';
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {faHandPaper, faHandRock, faHandScissors} from '@fortawesome/free-solid-svg-icons'
+import React, {Fragment} from 'react';
+
+import Rock from './rock'
+import Paper from './paper'
+import Scissors from './scissors'
 
 const Option = (props) => {
     const options = {
-        "rock": faHandRock,
-        "paper": faHandPaper,
-        "scissors": faHandScissors,
-    };
+        "rock": Rock,
+         "paper": Paper
+    //     // "scissors": faHandScissors,
+     };
 
     return (
-        <FontAwesomeIcon icon={options[props.option]} size="6x" color={props.color}/>
-    );
+      //replace this code with our own option images
+      <Fragment>
+        <Rock/>
+        <Paper/>
+
+      </Fragment>
+    )
 };
 
 export default Option;
