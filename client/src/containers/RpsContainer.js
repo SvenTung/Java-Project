@@ -35,7 +35,7 @@ class RpsContainer extends Component {
     return (
       <div className="main-content">
         <p>Rock Paper Scissors!</p>
-        <img src="/assets/gameboyEdit.svg" style={{height: "92vh"}}/>
+        <img src="/assets/gameboy.svg" style={{height: "92vh"}}/>
       </div>
     )
   }
