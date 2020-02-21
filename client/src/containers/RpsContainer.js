@@ -1,10 +1,6 @@
 import React, {Component, Fragment} from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-<<<<<<< HEAD
-import Option from '../components/Option.js'
 import RockPaperScissors from  '../components/RockPaperScissors'
-=======
->>>>>>> f2064fc2cc5ebfc9287d9357c40d3d70589327fa
 import Template from '../components/template'
 
 class RpsContainer extends Component {
