@@ -1,5 +1,6 @@
 import React, {Component, Fragment} from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import Template from '../components/template'
 
 class RpsContainer extends Component {
   constructor(props){
@@ -35,7 +36,8 @@ class RpsContainer extends Component {
     return (
       <div className="main-content">
         <p>Rock Paper Scissors!</p>
-        <img src="/assets/gameboy.svg" style={{height: "92vh"}}/>
+        // <img src="/assets/GameboyOrginal.svg" style={{height: "92vh"}}/>
+        <Template aButton={this.handleAClick} bButton={this.handleBClick}/>
       </div>
     )
   }
