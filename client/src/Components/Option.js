@@ -7,8 +7,8 @@ import Scissors from './scissors'
 const Option = (props) => {
     const options = {
         "rock": Rock,
-         "paper": Paper
-    //     // "scissors": faHandScissors,
+         "paper": Paper,
+        "scissors": Scissors
      };
 
     return (
@@ -16,7 +16,7 @@ const Option = (props) => {
       <Fragment>
         <Rock/>
         <Paper/>
-
+        <Scissors/>
       </Fragment>
     )
 };

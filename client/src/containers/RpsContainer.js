@@ -2,6 +2,7 @@ import React, {Component, Fragment} from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import Option from '../components/Option.js'
 import RockPaperScissors from  '../components/RockPaperScissors'
+import Template from '../components/template'
 
 class RpsContainer extends Component {
   constructor(props){
@@ -32,12 +33,18 @@ class RpsContainer extends Component {
   handleStartClick(){
     console.log("Start");
   }
+  handleEjectClick(){
+    console.log("Eject");
+  }
 
   render(){
     return (
       <div className="main-content">
         <p>Rock Paper Scissors!</p>
-        <img src="/assets/gameboy.svg" style={{height: "92vh"}}/>
+        <Template aButton={this.handleAClick} bButton={this.handleBClick} upPress={this.handleUpClick} downPress={this.handleDownClick} leftPress={this.handleLeftClick} rightPress={this.handleRightClick}
+        ejectPress={this.handleEjectClick}
+        startPress={this.handleStartClick}
+        />
         <RockPaperScissors/>
       </div>
     )
