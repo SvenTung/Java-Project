@@ -10,8 +10,8 @@ class RockPaperScissors extends Component {
 
   state = {
     players: [
-      {name: "one", selectedOption: "", winner: false, won: 0},
-      {name: "two", selectedOption: "", winner: false, won: 0}
+      {name: "one", selectedOption: "", winner: false, wins: 0},
+      {name: "two", selectedOption: "", winner: false, wins: 0}
     ],
     gameState: "active",
     gamesPlayed: 0
@@ -20,8 +20,8 @@ class RockPaperScissors extends Component {
   resetGame = () => {
     this.setState({
       players: [
-        {name: "one", selectedOption: "", winner: false, won: this.state.players[0].won},
-        {name: "two", selectedOption: "", winner: false, won: this.state.players[1].won}
+        {name: "one", selectedOption: "", winner: false, wins: this.state.players[0].won},
+        {name: "two", selectedOption: "", winner: false, wins: this.state.players[1].won}
       ],
       gameState: "active"
     });
