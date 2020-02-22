@@ -20,8 +20,8 @@ class RockPaperScissors extends Component {
   resetGame = () => {
     this.setState({
       players: [
-        {name: "one", selectedOption: "", winner: false, wins: this.state.players[0].won},
-        {name: "Computer", selectedOption: "", winner: false, wins: this.state.players[1].won}
+        {name: "one", selectedOption: "", winner: false, wins: this.state.players[0].wins},
+        {name: "Computer", selectedOption: "", winner: false, wins: this.state.players[1].wins}
       ],
       gameState: "active"
     });
@@ -46,7 +46,7 @@ class RockPaperScissors extends Component {
   setPlayerWinner = (playerId) => {
     const newPlayers = this.state.players;
     newPlayers[playerId].winner = true;
-    newPlayers[playerId].won = newPlayers[playerId].won + 1;
+    newPlayers[playerId].wins = newPlayers[playerId].wins + 1;
     this.setState({players: newPlayers});
   };
 
@@ -74,7 +74,7 @@ class RockPaperScissors extends Component {
         <br/>
         {this.state.gameState !== 'active' ? (<button onClick={() => {
             this.resetGame()
-        }}>Again</button>) : <></>}
+        }}>Play Again</button>) : <></>}
       </div>
     );
   }

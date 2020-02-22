@@ -38,6 +38,7 @@ class RpsContainer extends Component {
   render(){
     return (
       <div className="main-content">
+      <p>Rock Paper Scissors!</p>
         <Template aButton={this.handleAClick} bButton={this.handleBClick} upPress={this.handleUpClick} downPress={this.handleDownClick} leftPress={this.handleLeftClick} rightPress={this.handleRightClick}
         ejectPress={this.handleEjectClick}
         startPress={this.handleStartClick}
