@@ -68,23 +68,20 @@ class RockPaperScissors extends Component {
   render = () => {
     return (
       <div className={"game"}>
-        <h2>Games played: {this.state.gamesPlayed}</h2>
+        <h5>Games played: {this.state.gamesPlayed}</h5>
           <Player
             playerId={0}
             player={this.state.players[0]}
             setPlayerOption={this.setPlayerOption}
             gameState={this.state.gameState}
           />
-        <br/>
+
         {this.state.players[0].selectedOption !== '' ? (
           <div>
-            <p>{this.state.players[1].selectedOption}</p>
-            <button onClick={() => {
-            this.resetGame()
-          }}>Play Again</button>
+            <p>Computer: {this.state.players[1].selectedOption}</p>
+            <button onClick={this.resetGame()}>Play Again</button>
           </div>
-        ) : (<></>)
-        }
+      ) : <></>}
       </div>
     );
   }
