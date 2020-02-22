@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import RockPaperScissors from  '../components/RockPaperScissors'
-import Template from '../components/Template'
+import Template from '../components/template'
 
 class RpsContainer extends Component {
   constructor(props){
@@ -8,6 +8,7 @@ class RpsContainer extends Component {
     this.state = {
       player: {name:"", choice:"", wins:0}
     }
+    // this.handleAClick = this.handleAClick.bind(this)
   }
 
   handleLeftClick(){
@@ -22,9 +23,12 @@ class RpsContainer extends Component {
   handleDownClick(){
     console.log("Down");
   }
+
   handleAClick(){
-    console.log("A");
+    console.log('A button press');
   }
+
+
   handleBClick(){
     console.log("B");
   }
@@ -35,15 +39,54 @@ class RpsContainer extends Component {
     console.log("Eject");
   }
 
+  handleKeyPress = (event) => {
+    switch(event.key){
+      case 'o':
+      console.log('o key pressed')
+      break;
+      case 'k':
+      console.log('k key pressed')
+      break;
+      case 'a':
+      console.log('a key pressed');
+      break
+      case 'd':
+      console.log('d key pressed');
+      break
+      case 's':
+      console.log('s key pressed');
+      break
+      case 'w':
+      console.log('w key pressed');
+      break
+    }
+  }
+
   render(){
     return (
-      <div className="main-content">
-        <p>Rock Paper Scissors!</p>
-        <Template aButton={this.handleAClick} bButton={this.handleBClick} upPress={this.handleUpClick} downPress={this.handleDownClick} leftPress={this.handleLeftClick} rightPress={this.handleRightClick}
-        ejectPress={this.handleEjectClick}
-        startPress={this.handleStartClick}
-        />
-        <RockPaperScissors/>
+      <div  className="main-content"
+      tabIndex={-1}
+      onKeyDown={this.handleKeyPress}
+      >
+      <p>Rock Paper Scissors!</p>
+      <Template
+
+      aKey={this.handleLeftClick}
+      dKey={this.handleRightClick}
+      sKey={this.handleDownClick}
+      wKey={this.handleUpClick}
+
+      kKey={this.handleBClick}
+      aButton={this.handleAClick}
+      bButton={this.handleBClick}
+      upPress={this.handleUpClick}
+      downPress={this.handleDownClick}
+      leftPress={this.handleLeftClick}
+      rightPress={this.handleRightClick}
+      ejectPress={this.handleEjectClick}
+      startPress={this.handleStartClick}
+      />
+      <RockPaperScissors />
       </div>
     )
   }
