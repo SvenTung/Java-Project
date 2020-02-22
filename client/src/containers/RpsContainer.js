@@ -43,7 +43,7 @@ class RpsContainer extends Component {
         ejectPress={this.handleEjectClick}
         startPress={this.handleStartClick}
         />
-        <RockPaperScissors/>
+        <RockPaperScissors />
       </div>
     )
   }

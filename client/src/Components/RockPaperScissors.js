@@ -18,19 +18,16 @@ class RockPaperScissors extends Component {
   };
 
   resetGame = () => {
-    // this.setState({
-      // players: [
-      //   {name: "one", selectedOption: "", winner: false, wins: this.state.players[0].wins},
-      //   {name: "Computer", selectedOption: "", winner: false, wins: this.state.players[1].wins}
-      // ],
-      this.state.players[0].selectedOption = ""
-      this.state.players[1].selectedOption = ""
     this.setState({
+      players: [
+        {name: "one", selectedOption: "", winner: false, wins: this.state.players[0].wins},
+        {name: "Computer", selectedOption: "", winner: false, wins: this.state.players[1].wins}
+      ],
       gameState: "active"
     });
   };
 
-  checkGameState = () => {
+  checkGameState(){
     this.setComputerOption()
     if (this.state.players[0].selectedOption !== '' && this.state.players[1].selectedOption !== '') {
       if (this.state.players[0].selectedOption === this.state.players[1].selectedOption) {
@@ -47,7 +44,7 @@ class RockPaperScissors extends Component {
     }
   };
 
-  setPlayerWinner = (playerId) => {
+  setPlayerWinner(playerId){
     const newPlayers = this.state.players;
     newPlayers[playerId].winner = true;
     newPlayers[playerId].wins = newPlayers[playerId].wins + 1;
@@ -71,7 +68,6 @@ class RockPaperScissors extends Component {
   render = () => {
     return (
       <div className={"game"}>
-        <h1>Game state: {this.state.gameState}</h1>
         <h2>Games played: {this.state.gamesPlayed}</h2>
           <Player
             playerId={0}
@@ -85,7 +81,7 @@ class RockPaperScissors extends Component {
             <p>{this.state.players[1].selectedOption}</p>
             <button onClick={() => {
             this.resetGame()
-            }}>Again</button>
+          }}>Play Again</button>
           </div>
         ) : (<></>)
         }
