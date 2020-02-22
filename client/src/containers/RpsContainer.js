@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import RockPaperScissors from  '../components/RockPaperScissors'
 import Template from '../components/template'
+import Canvas from '../components/canvas'
 
 class RpsContainer extends Component {
   constructor(props){
@@ -69,6 +70,7 @@ class RpsContainer extends Component {
       onKeyDown={this.handleKeyPress}
       >
       <p>Rock Paper Scissors!</p>
+<Canvas/>
       <Template
 
       aKey={this.handleLeftClick}
@@ -86,7 +88,9 @@ class RpsContainer extends Component {
       ejectPress={this.handleEjectClick}
       startPress={this.handleStartClick}
       />
+
       <RockPaperScissors />
+
       </div>
     )
   }
