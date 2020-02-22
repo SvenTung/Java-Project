@@ -1,4 +1,4 @@
-import React, {Component, Fragment} from 'react';
+import React, {Fragment} from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import WelcomeContainer from './WelcomeContainer';
 import RpsContainer from './RpsContainer';
