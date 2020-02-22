@@ -85,14 +85,9 @@ class RockPaperScissors extends Component {
             <p>{this.state.players[1].selectedOption}</p>
             <button onClick={() => {
             this.resetGame()
-<<<<<<< HEAD
-        }}>Play Again</button>) : <></>}
-=======
-            }}>Again</button>
+            }}>Play Again</button>
           </div>
-        ) : (<></>)
-        }
->>>>>>> c2dbaef6291be9f3f811956489d387dce4047b61
+      ) : <></>}
       </div>
     );
   }
