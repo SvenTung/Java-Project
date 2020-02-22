@@ -29,18 +29,15 @@ class RockPaperScissors extends Component {
 
   checkGameState(){
     this.setComputerOption()
-    if (this.state.players[0].selectedOption !== '' && this.state.players[1].selectedOption !== '') {
-      if (this.state.players[0].selectedOption === this.state.players[1].selectedOption) {
-        this.setState({gameState: 'draw'});
-      } else {
-        this.setState({gameState: 'complete'});
-      }
-      this.setState({gamesPlayed: this.state.gamesPlayed + 1});
-      if (this.options[this.state.players[0].selectedOption].includes(this.state.players[1].selectedOption)) {
-        this.setPlayerWinner(0);
-      } else if (this.options[this.state.players[1].selectedOption].includes(this.state.players[0].selectedOption)) {
-        this.setPlayerWinner(1);
-      }
+    this.setState({gamesPlayed: this.state.gamesPlayed + 1});
+    if (this.options[this.state.players[0].selectedOption].includes(this.state.players[1].selectedOption)) {
+      this.setPlayerWinner(0);
+      this.setState({gameState: 'win'});
+    } else if (this.options[this.state.players[1].selectedOption].includes(this.state.players[0].selectedOption)) {
+      this.setPlayerWinner(1);
+      this.setState({gameState: 'lose'});
+    } else {
+      this.setState({gameState: 'draw'});
     }
   };
 
@@ -78,7 +75,18 @@ class RockPaperScissors extends Component {
 
         {this.state.players[0].selectedOption !== '' ? (
           <div>
-            <p>Computer: {this.state.players[1].selectedOption.toUpperCase()}</p>
+            <p>You chose {this.state.players[0].selectedOption.toUpperCase()}</p>
+            <p>Computer chose {this.state.players[1].selectedOption.toUpperCase()}</p>
+            {this.state.gameState === 'draw' ? (
+              <p>Draw!</p>
+            ) : (
+              this.state.gameState === 'win' ? (
+                <p>You win!</p>
+              ) : (
+                <p>Computer wins!</p>
+              )
+            )
+            }
             <button onClick={() => {this.resetGame()}}>Play Again</button>
           </div>
       ) : <></>}
