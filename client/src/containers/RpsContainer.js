@@ -71,25 +71,8 @@ class RpsContainer extends Component {
       >
       <p>Rock Paper Scissors!</p>
 <Canvas/>
-      <Template
 
-      aKey={this.handleLeftClick}
-      dKey={this.handleRightClick}
-      sKey={this.handleDownClick}
-      wKey={this.handleUpClick}
 
-      kKey={this.handleBClick}
-      aButton={this.handleAClick}
-      bButton={this.handleBClick}
-      upPress={this.handleUpClick}
-      downPress={this.handleDownClick}
-      leftPress={this.handleLeftClick}
-      rightPress={this.handleRightClick}
-      ejectPress={this.handleEjectClick}
-      startPress={this.handleStartClick}
-      />
-
-      <RockPaperScissors />
 
       </div>
     )

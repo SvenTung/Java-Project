@@ -1,5 +1,5 @@
 import React from 'react';
-import 
+import Option from './Option'
 
 const Canvas = () => {
   const viewBox = [window.innerWidth / -2, 100 - window.innerHeight, window.innerWidth, window.innerHeight];
@@ -15,7 +15,9 @@ const Canvas = () => {
       >
       <path fill="#73D216" d="M87.9 120.5h407.2c7.3 0 13.2 4.1 13.2 9.2v258.4c0 5.1-5.9 9.2-13.2 9.2H87.9c-7.3 0-13.2-4.1-13.2-9.2V129.7c0-5.1 5.9-9.2 13.2-9.2z">
       </path>
+
     </svg>
+    <Option/>
   );
 };
 
