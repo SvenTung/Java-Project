@@ -4,7 +4,7 @@ import Option from "./Option";
 const Player = (props) => {
   return (
     <div className={"player"}>
-      <h3>Player {props.player.name} ({props.player.won} wins)</h3>
+      <h3>Player {props.player.name} ({props.player.wins} wins)</h3>
       {props.player.selectedOption === '' ? (
         <>
           <button onClick={() => props.setPlayerOption(props.playerId, "rock")} className={"playerOption"}>
@@ -15,15 +15,18 @@ const Player = (props) => {
           className={"playerOption"}><Option option={"scissors"}/></button>
         </>
       ) : (
-        <Option
-          option={props.player.selectedOption}
-          color={props.gameState !== 'active' ?
-          (
-            props.player.winner ? 'green' : 'red'
-          ) : (
-            ''
-          )}
-        />
+        <button>
+          <Option
+            option={props.player.selectedOption}
+            color={props.gameState !== 'active' ?
+            (
+              props.player.winner ? 'green' : 'red'
+            ) : (
+              ''
+            )}
+          />
+        </button>
+
       )}
     </div>
   )
