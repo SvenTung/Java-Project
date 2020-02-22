@@ -1,24 +1,24 @@
 import React, {Fragment} from 'react';
 
-import Rock from './rock'
-import Paper from './paper'
-import Scissors from './scissors'
+import Rock from './Rock'
+import Paper from './Paper'
+import Scissors from './Scissors'
 
 const Option = (props) => {
-    const options = {
-        "rock": Rock,
-         "paper": Paper,
-        "scissors": Scissors
-     };
+  const options = {
+    "rock": Rock,
+    "paper": Paper,
+    "scissors": Scissors
+  };
 
-    return (
-      //replace this code with our own option images
-      <Fragment>
-        <Rock/>
-        <Paper/>
-        <Scissors/>
-      </Fragment>
-    )
+  return (
+    //replace this code with our own option images
+    <Fragment>
+      <Rock/>
+      <Paper/>
+      <Scissors/>
+    </Fragment>
+  )
 };
 
 export default Option;

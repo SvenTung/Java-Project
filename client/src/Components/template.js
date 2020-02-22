@@ -1,4 +1,4 @@
-import React, {Component, Fragment} from 'react'
+import React, {Fragment} from 'react'
 
 const Template = (props) => {
 
@@ -14,6 +14,7 @@ return(
       version="1.1"
       viewBox="0 0 588.3 959.7"
       xmlSpace="preserve"
+      height="94vh"
     >
       <path d="M38.2 17.7h512c11.3 0 20.4 9.1 20.4 20.4v826.7c-7.6 18.3-15.6 27.1-27.5 36.7-20.3 16.3-46 25.6-71.1 32.2-29.1 7.7-60 5.5-89.9 8.2H38.2c-11.3 0-20.4-9.1-20.4-20.4V38.2c-.1-11.4 9-20.5 20.4-20.5z"></path>
       <path

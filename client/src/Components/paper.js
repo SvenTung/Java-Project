@@ -1,9 +1,9 @@
-import React, {Component} from 'react'
+import React from 'react'
 
 const Paper = (props) => {
 
   return(
-    <img src="/assets/realBook.png" style={{height: "22vh"}}/>
+    <img src="/assets/realBook.png" style={{height: "12vh"}} alt=''/>
   )
 
 }
