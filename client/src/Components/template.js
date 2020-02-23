@@ -1,5 +1,5 @@
 import React, {Fragment} from 'react'
-// import RockPaperScissors from './RockPaperScissors';
+import RockPaperScissors from './RockPaperScissors';
 
 const Template = (props) => {
 
@@ -16,6 +16,7 @@ return(
       viewBox="0 0 588.3 959.7"
       xmlSpace="preserve"
       height="94vh"
+      id='template'
     >
       <path d="M38.2 17.7h512c11.3 0 20.4 9.1 20.4 20.4v826.7c-7.6 18.3-15.6 27.1-27.5 36.7-20.3 16.3-46 25.6-71.1 32.2-29.1 7.7-60 5.5-89.9 8.2H38.2c-11.3 0-20.4-9.1-20.4-20.4V38.2c-.1-11.4 9-20.5 20.4-20.5z"></path>
       <path
@@ -45,8 +46,8 @@ return(
       <path
         fill="#73D216"
         d="M87.9 120.5h407.2c7.3 0 13.2 4.1 13.2 9.2v258.4c0 5.1-5.9 9.2-13.2 9.2H87.9c-7.3 0-13.2-4.1-13.2-9.2V129.7c0-5.1 5.9-9.2 13.2-9.2z"
-      
-        ></path>
+
+        ><RockPaperScissors/></path>
       <path
         fill="#482A50"
         d="M444.4 648.8c0 19-15.4 34.3-34.3 34.3-19 0-34.3-15.4-34.3-34.3 0-19 15.4-34.3 34.3-34.3s34.3 15.3 34.3 34.3z"

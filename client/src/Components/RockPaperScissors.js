@@ -65,6 +65,7 @@ class RockPaperScissors extends Component {
   render = () => {
     return (
       <div className={"game"}>
+      
         <h5>Games played: {this.state.gamesPlayed}</h5>
           <Player
             playerId={0}
