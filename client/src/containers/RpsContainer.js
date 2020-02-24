@@ -6,10 +6,8 @@ class RpsContainer extends Component {
   constructor(props){
     super(props);
     this.state = {
-      player: {name:"", choice:"", wins:0},
-      eject: false
+      player: {name:"", choice:"", wins:0}
     }
-    this.handleEjectClick = this.handleEjectClick.bind(this)
   }
 
   handleLeftClick(){
@@ -24,9 +22,8 @@ class RpsContainer extends Component {
   handleDownClick(){
     console.log("Down");
   }
-
   handleAClick(){
-    console.log('A button press');
+    console.log("A");
   }
 
   handleBClick(){
