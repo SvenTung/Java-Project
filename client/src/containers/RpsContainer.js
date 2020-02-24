@@ -18,20 +18,20 @@ class RpsContainer extends Component {
   }
 
   handleLeftClick(){
-    this.state.hover -= 1
+    this.setState({hover: this.state.hover -= 1})
     if (this.state.hover === 3) {
-      this.state.hover = 0
+      this.setState({hover: this.state.hover = 0})
     } else if (this.state.hover === -1) {
-      this.state.hover = 2
+      this.setState({hover: this.state.hover = 2})
     }
     console.log(this.state.choices[this.state.hover]);
   }
   handleRightClick(){
-    this.state.hover += 1
+    this.setState({hover: this.state.hover += 1})
     if (this.state.hover === 3) {
-      this.state.hover = 0
+      this.setState({hover: this.state.hover = 0})
     } else if (this.state.hover === -1) {
-      this.state.hover = 2
+      this.setState({hover: this.state.hover = 2})
     }
     console.log(this.state.choices[this.state.hover]);
   }
@@ -83,7 +83,6 @@ class RpsContainer extends Component {
     const { eject } = this.state;
     return (
       <div className="main-content"
-      tabIndex={-1}
       onKeyDown={this.handleKeyPress}
       >
       <p>Rock Paper Scissors!</p>
