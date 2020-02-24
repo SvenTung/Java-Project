@@ -65,6 +65,7 @@ class RockPaperScissors extends Component {
   render = () => {
     return (
       <div className={"game"}>
+
         <h5>Games played: {this.state.gamesPlayed}</h5>
           <Player
             playerId={0}
@@ -74,6 +75,9 @@ class RockPaperScissors extends Component {
           />
 
         {this.state.players[0].selectedOption !== '' ? (
+
+          
+
           <div>
             <p>You chose {this.state.players[0].selectedOption.toUpperCase()}</p>
             <p>Computer chose {this.state.players[1].selectedOption.toUpperCase()}</p>
@@ -88,6 +92,7 @@ class RockPaperScissors extends Component {
             )
             }
             <button onClick={() => {this.resetGame()}}>Play Again</button>
+
           </div>
       ) : <></>}
       </div>
