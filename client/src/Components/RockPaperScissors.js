@@ -80,7 +80,7 @@ class RockPaperScissors extends Component {
           />
 
         {this.state.players[0].selectedOption !== '' ? (
-          <div>
+          <div className={"happy"}>
             <p>Computer: {this.state.players[1].selectedOption}</p>
             <button onClick={() => {
             this.resetGame()
