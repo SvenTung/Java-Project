@@ -1,20 +1,39 @@
 import React, {Component} from 'react';
 import RockPaperScissors from  '../components/RockPaperScissors'
 import Template from '../components/Template'
+import Arrow from '../components/Arrow'
 
 class RpsContainer extends Component {
   constructor(props){
     super(props);
     this.state = {
-      player: {name:"", choice:"", wins:0}
+      player: {name:"", choice:"", wins:0},
+      eject: false,
+      choices: ["rock", "paper", "scissors"],
+      hover: 0
     }
+    this.handleLeftClick = this.handleLeftClick.bind(this);
+    this.handleRightClick = this.handleRightClick.bind(this);
+    this.handleEjectClick = this.handleEjectClick.bind(this);
   }
 
   handleLeftClick(){
-    console.log("Left");
+    this.state.hover -= 1
+    if (this.state.hover === 3) {
+      this.state.hover = 0
+    } else if (this.state.hover === -1) {
+      this.state.hover = 2
+    }
+    console.log(this.state.choices[this.state.hover]);
   }
   handleRightClick(){
-    console.log("Right");
+    this.state.hover += 1
+    if (this.state.hover === 3) {
+      this.state.hover = 0
+    } else if (this.state.hover === -1) {
+      this.state.hover = 2
+    }
+    console.log(this.state.choices[this.state.hover]);
   }
   handleUpClick(){
     console.log("Up");
@@ -89,6 +108,7 @@ class RpsContainer extends Component {
       startPress={this.handleStartClick}
       />
       <RockPaperScissors/>
+      <Arrow choices={this.state.choices} hover={this.state.hover}/>
       </div>
     )
   }
