@@ -6,7 +6,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: darkgray;
-  background-image:url('https://cdn.hipwallpaper.com/m/3/96/PS8Euf.png');
+  background-image:url('/assets/1094283.jpg');
   background-repeat:space;
   background-size: cover;
   position: relative;
@@ -16,7 +16,7 @@ body {
 
 h5{
   margin-bottom: 10px;
-  margin-top: -5px;
+  margin-top: -4px;
   font-size: 11px;
 }
 
