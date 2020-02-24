@@ -7,7 +7,7 @@ class RpsContainer extends Component {
   constructor(props){
     super(props);
     this.state = {
-      player: {name:"", choice:"", wins:0},
+      player: {name: "One", selectedOption: "", wins: 0},
       eject: false,
       choices: ["rock", "paper", "scissors"],
       hover: 0
@@ -15,6 +15,7 @@ class RpsContainer extends Component {
     this.handleLeftClick = this.handleLeftClick.bind(this);
     this.handleRightClick = this.handleRightClick.bind(this);
     this.handleEjectClick = this.handleEjectClick.bind(this);
+    this.handleAClick = this.handleAClick.bind(this);
   }
 
   handleLeftClick(){
@@ -36,7 +37,7 @@ class RpsContainer extends Component {
     console.log(this.state.choices[this.state.hover]);
   }
   handleAClick(){
-    console.log("A");
+    this.state.player.selectedOption = this.state.choices[this.state.hover];
   }
 
   handleBClick(){
@@ -85,7 +86,6 @@ class RpsContainer extends Component {
       tabIndex={-1}
       onKeyDown={this.handleKeyPress}
       >
-
       <div className="cartridge-container">
       {eject ? ( <img src="/assets/cartridge.png" style={{height: "45vh"}} className="cartridge" alt=""/>): (<></>)}
       </div>
@@ -97,7 +97,7 @@ class RpsContainer extends Component {
       ejectPress={this.handleEjectClick}
       startPress={this.handleStartClick}
       />
-      <RockPaperScissors/>
+      <RockPaperScissors player={this.state.player}/>
       <Arrow choices={this.state.choices} hover={this.state.hover}/>
       </div>
     )

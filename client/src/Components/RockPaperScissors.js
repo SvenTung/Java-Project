@@ -2,63 +2,52 @@ import React, {Component}from 'react';
 import Player from "./Player";
 
 class RockPaperScissors extends Component {
-  options = {
-    "rock": ["scissors"],
-    "paper": ["rock"],
-    "scissors": ["paper"]
-  };
-
-  state = {
-    players: [
-      {name: "one", selectedOption: "", winner: false, wins: 0},
-      {name: "Computer", selectedOption: "", winner: false, wins: 0}
-    ],
-    gameState: "active",
-    gamesPlayed: 0
+  constructor(props){
+    super(props);
+    this.state = {
+      player: this.props.player,
+      computer: {name: "Computer", selectedOption: "", wins: 0},
+      gameState: "active",
+      gamesPlayed: 0,
+      options: {
+        "rock": ["scissors"],
+        "paper": ["rock"],
+        "scissors": ["paper"]
+      }
+    }
   };
 
   resetGame = () => {
     this.setState({
-      players: [
-        {name: "one", selectedOption: "", winner: false, wins: this.state.players[0].wins},
-        {name: "Computer", selectedOption: "", winner: false, wins: this.state.players[1].wins}
-      ],
+      player: {name: "One", selectedOption: "", wins: this.state.player.wins},
+      computer: {name: "Computer", selectedOption: "", wins: this.state.computer.wins},
       gameState: "active"
     });
   };
 
   checkGameState(){
-    this.setComputerOption()
+    this.selectComputerOption()
     this.setState({gamesPlayed: this.state.gamesPlayed + 1});
-    if (this.options[this.state.players[0].selectedOption].includes(this.state.players[1].selectedOption)) {
-      this.setPlayerWinner(0);
+    if (this.state.options[this.state.player.selectedOption].includes(this.state.computer.selectedOption)) {
+      this.state.player.wins += 1;
       this.setState({gameState: 'win'});
-    } else if (this.options[this.state.players[1].selectedOption].includes(this.state.players[0].selectedOption)) {
-      this.setPlayerWinner(1);
+    } else if (this.state.options[this.state.computer.selectedOption].includes(this.state.player.selectedOption)) {
+      this.state.computer.wins += 1;
       this.setState({gameState: 'lose'});
     } else {
       this.setState({gameState: 'draw'});
     }
   };
 
-  setPlayerWinner(playerId){
-    const newPlayers = this.state.players;
-    newPlayers[playerId].winner = true;
-    newPlayers[playerId].wins = newPlayers[playerId].wins + 1;
-    this.setState({players: newPlayers});
-  };
-
-  setPlayerOption = (playerId, playerOption) => {
-    const newPlayers = this.state.players;
-    newPlayers[playerId].selectedOption = playerOption;
-    this.setState({players: newPlayers});
+  setPlayerOption = (option) => {
+    this.state.player.selectedOption = option
     this.checkGameState();
   };
 
-  setComputerOption(){
+  selectComputerOption(){
     const choice = ["rock", "paper", "scissors"]
     const randomNumber = Math.floor(Math.random() * 3)
-    this.state.players[1].selectedOption = (choice[randomNumber])
+    this.state.computer.selectedOption = (choice[randomNumber])
     console.log(choice[randomNumber]);
   }
 
@@ -68,14 +57,14 @@ class RockPaperScissors extends Component {
         <h5>Games played: {this.state.gamesPlayed}</h5>
           <Player
             playerId={0}
-            player={this.state.players[0]}
+            player={this.state.player}
             setPlayerOption={this.setPlayerOption}
             gameState={this.state.gameState}
           />
-        {this.state.players[0].selectedOption !== '' ? (
+        {this.state.player.selectedOption !== '' ? (
           <div>
-            <p>You chose {this.state.players[0].selectedOption.toUpperCase()}</p>
-            <p>Computer chose {this.state.players[1].selectedOption.toUpperCase()}</p>
+            <p>You chose {this.state.player.selectedOption.toUpperCase()}</p>
+            <p>Computer chose {this.state.computer.selectedOption.toUpperCase()}</p>
             {this.state.gameState === 'draw' ? (
               <p>Draw!</p>
             ) : (
