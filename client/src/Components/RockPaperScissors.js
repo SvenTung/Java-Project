@@ -6,50 +6,22 @@ class RockPaperScissors extends Component {
     super(props);
     this.state = {
       player: this.props.player,
-      computer: {name: "Computer", selectedOption: "", wins: 0},
+      computer: this.props.computer,
       gameState: "active",
-      gamesPlayed: 0,
-      options: {
-        "rock": ["scissors"],
-        "paper": ["rock"],
-        "scissors": ["paper"]
-      }
+      gamesPlayed: 0
     }
   };
 
   resetGame = () => {
-    this.setState({
-      player: {name: "One", selectedOption: "", wins: this.state.player.wins},
-      computer: {name: "Computer", selectedOption: "", wins: this.state.computer.wins},
-      gameState: "active"
-    });
-  };
-
-  checkGameState(){
-    this.selectComputerOption()
-    this.setState({gamesPlayed: this.state.gamesPlayed + 1});
-    if (this.state.options[this.state.player.selectedOption].includes(this.state.computer.selectedOption)) {
-      this.state.player.wins += 1;
-      this.setState({gameState: 'win'});
-    } else if (this.state.options[this.state.computer.selectedOption].includes(this.state.player.selectedOption)) {
-      this.state.computer.wins += 1;
-      this.setState({gameState: 'lose'});
-    } else {
-      this.setState({gameState: 'draw'});
-    }
+    this.state.player.selectedOption = ''
+    this.state.computer.selectedOption = ''
+    this.state.gameState = 'active'
   };
 
   setPlayerOption = (option) => {
     this.state.player.selectedOption = option
-    this.checkGameState();
+    this.props.checkGameState();
   };
-
-  selectComputerOption(){
-    const choice = ["rock", "paper", "scissors"]
-    const randomNumber = Math.floor(Math.random() * 3)
-    this.state.computer.selectedOption = (choice[randomNumber])
-    console.log(choice[randomNumber]);
-  }
 
   render = () => {
     return (
