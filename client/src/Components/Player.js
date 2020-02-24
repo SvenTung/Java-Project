@@ -7,11 +7,11 @@ const Player = (props) => {
       <h5>Player {props.player.name} ({props.player.wins} wins)</h5>
       {props.player.selectedOption === '' ? (
         <>
-          <button onClick={() => props.setPlayerOption(props.playerId, "rock")} className={"playerOption"}>
+          <button onClick={() => props.setPlayerOption("rock")} className={"playerOption"}>
           <Option option={"rock"}/></button>
-          <button onClick={() => props.setPlayerOption(props.playerId, "paper")} className={"playerOption"}>
+          <button onClick={() => props.setPlayerOption("paper")} className={"playerOption"}>
           <Option option={"paper"}/></button>
-          <button onClick={() => props.setPlayerOption(props.playerId, "scissors")}
+          <button onClick={() => props.setPlayerOption("scissors")}
           className={"playerOption"}><Option option={"scissors"}/></button>
         </>
       ) : (
