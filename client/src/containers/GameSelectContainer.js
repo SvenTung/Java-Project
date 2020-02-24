@@ -1,21 +1,22 @@
-import React, {Fragment} from 'react';
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-import Game from '../components/Game.js';
+import React, {Component} from 'react';
+import GameList from '../components/GameList.js';
 
-const GameSelectContainer = (props) => {
+class GameSelectContainer extends Component {
+  state = {
+    games: []
+  }
 
-  const games = props.games.map((game, index) => {
+  componentDidMount(){
+    const request = new Request();
+    request.get('/api/games')
+    .then(data => this.setState({games: data}))
+  }
+
+  render = () => {
     return (
-      <li>
-        <Game game={game} />
-      </li>
+      <GameList games={this.state.game} />
     )
-  })
+  }
 
-  return (
-    <ul className="game-list">
-      {games}
-    </ul>
-  )
 }
 export default GameSelectContainer

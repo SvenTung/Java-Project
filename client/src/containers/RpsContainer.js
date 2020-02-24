@@ -36,14 +36,34 @@ class RpsContainer extends Component {
   }
 
   render(){
+    const { eject } = this.state;
     return (
-      <div className="main-content">
+      <div  className="main-content"
+      tabIndex={-1}
+      onKeyDown={this.handleKeyPress}
+      >
       <p>Rock Paper Scissors!</p>
-        <Template aButton={this.handleAClick} bButton={this.handleBClick} upPress={this.handleUpClick} downPress={this.handleDownClick} leftPress={this.handleLeftClick} rightPress={this.handleRightClick}
-        ejectPress={this.handleEjectClick}
-        startPress={this.handleStartClick}
-        />
-        <RockPaperScissors/>
+      <div className="cartridge-container">
+      {eject ? ( <img src="/assets/cartridge.png" style={{height: "45vh"}} className="cartridge" />): (<div></div>)}
+      </div>
+      <Template
+
+      aKey={this.handleLeftClick}
+      dKey={this.handleRightClick}
+      sKey={this.handleDownClick}
+      wKey={this.handleUpClick}
+
+      kKey={this.handleBClick}
+      aButton={this.handleAClick}
+      bButton={this.handleBClick}
+      upPress={this.handleUpClick}
+      downPress={this.handleDownClick}
+      leftPress={this.handleLeftClick}
+      rightPress={this.handleRightClick}
+      ejectPress={this.handleEjectClick}
+      startPress={this.handleStartClick}
+      />
+      <RockPaperScissors/>
       </div>
     )
   }

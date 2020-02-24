@@ -1,8 +1,10 @@
 import React from 'react';
+import NavBar from '../Navbar.js'
 
 const WelcomeContainer = (props) => {
   return (
     <div className="content">
+    <NavBar />
       <h3 href="/select">Games</h3>
       <a href="/rps">Rock, Paper, Scissors</a>
       <p>Welcome to GSS Arcade</p>
