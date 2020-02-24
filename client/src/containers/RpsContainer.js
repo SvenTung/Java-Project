@@ -81,6 +81,7 @@ class RpsContainer extends Component {
       <div className="cartridge-container">
       {eject ? ( <img src="/assets/cartridge.png" style={{height: "45vh"}} className="cartridge" />): (<div></div>)}
       </div>
+
       <Template
 
       aKey={this.handleLeftClick}
@@ -98,7 +99,7 @@ class RpsContainer extends Component {
       ejectPress={this.handleEjectClick}
       startPress={this.handleStartClick}
       />
-
+<RockPaperScissors/>
 
 
       </div>
