@@ -18,7 +18,7 @@ h5{
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  monospace;
 }
 
 .game{
@@ -39,6 +39,7 @@ h5{
   position: relative;
 
 }
+
 .player{
 
 }
@@ -48,11 +49,11 @@ h5{
 }
 
 .cartridge-container{
-    z-index: -1;
-    position: absolute;
-    margin-top: 0px;
-    padding-top: 3px;
-    padding-left: 262px;
+  z-index: -1;
+  position: absolute;
+  margin-top: 0px;
+  padding-top: 3px;
+  padding-left: 262px;
 }
 
 #template{

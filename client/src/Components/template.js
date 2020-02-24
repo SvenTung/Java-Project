@@ -3,7 +3,6 @@ import RockPaperScissors from './RockPaperScissors';
 
 const Template = (props) => {
 
-
 return(
 
 <div className="gameboy">

@@ -29,7 +29,6 @@ class RpsContainer extends Component {
     console.log('A button press');
   }
 
-
   handleBClick(){
     console.log("B");
   }
@@ -39,7 +38,6 @@ class RpsContainer extends Component {
   handleEjectClick(){
     console.log("Eject")
     this.setState({ eject: !this.state.eject })
-
   }
 
   handleKeyPress = (event) => {
@@ -65,12 +63,10 @@ class RpsContainer extends Component {
     }
   }
 
-
-
   render(){
     const { eject } = this.state;
     return (
-      <div  className="main-content"
+      <div className="main-content"
       tabIndex={-1}
       onKeyDown={this.handleKeyPress}
       >
