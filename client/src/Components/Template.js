@@ -1,5 +1,4 @@
-import React, {Fragment} from 'react'
-import RockPaperScissors from './RockPaperScissors';
+import React from 'react'
 
 const Template = (props) => {
 
@@ -291,7 +290,7 @@ return(
         <path d="M360.9 485.2v-9.9h-3.7V474h8.9v1.3h-3.7v9.9h-1.5z"></path>
         <path d="M367.6 485.2V474h2.2l2.7 7.9c.2.7.4 1.3.5 1.7.1-.4.3-1 .6-1.8l2.7-7.8h2v11.2h-1.4v-9.4l-3.3 9.4h-1.3l-3.2-9.5v9.5h-1.5z"></path>
       </g>
-      <path d="M107.4 572H142.8V607.4H107.4z" onClick={props.upPress}></path>
+      <path d="M107.4 572H142.8V607.4H107.4z" onClick={props.rightPress}></path>
       <g transform="translate(-28.284 15.152)">
         <g transform="translate(-27.78 15.657)">
           <g transform="translate(-27.274 15.657)">
@@ -338,7 +337,7 @@ return(
           </g>
         </g>
       </g>
-      <path d="M108.3 665.4H143.7V700.8H108.3z" onClick={props.downPress}></path>
+      <path d="M108.3 665.4H143.7V700.8H108.3z" onClick={props.leftPress}></path>
       <path d="M64.1 617.5H99.5V652.9H64.1z" onClick={props.leftPress}></path>
       <path d="M150.4 617.5H185.8V652.9H150.4z" onClick={props.rightPress}></path>
       <g fill="#00006A">

@@ -35,12 +35,6 @@ class RpsContainer extends Component {
     }
     console.log(this.state.choices[this.state.hover]);
   }
-  handleUpClick(){
-    console.log("Up");
-  }
-  handleDownClick(){
-    console.log("Down");
-  }
   handleAClick(){
     console.log("A");
   }
@@ -58,23 +52,28 @@ class RpsContainer extends Component {
 
   handleKeyPress = (event) => {
     switch(event.key){
-      case 'o':
-      console.log('o key pressed')
-      break;
-      case 'k':
-      console.log('k key pressed')
-      break;
       case 'a':
-      console.log('a key pressed');
-      break
-      case 'd':
-      console.log('d key pressed');
-      break
       case 's':
-      console.log('s key pressed');
-      break
+      case 'ArrowLeft':
+      case 'ArrowDown':
+        this.handleLeftClick()
+        break
+      case 'd':
       case 'w':
-      console.log('w key pressed');
+      case 'ArrowRight':
+      case 'ArrowUp':
+        this.handleRightClick()
+        break
+      case '1':
+        this.setState({hover: 0})
+        break
+      case '2':
+        this.setState({hover: 1})
+        break
+      case '3':
+        this.setState({hover: 2})
+        break
+      default:
       break
     }
   }
@@ -83,24 +82,16 @@ class RpsContainer extends Component {
     const { eject } = this.state;
     return (
       <div className="main-content"
+      tabIndex={-1}
       onKeyDown={this.handleKeyPress}
       >
 
       <div className="cartridge-container">
-      {eject ? ( <img src="/assets/cartridge.png" style={{height: "45vh"}} className="cartridge" />): (<div></div>)}
+      {eject ? ( <img src="/assets/cartridge.png" style={{height: "45vh"}} className="cartridge" alt=""/>): (<></>)}
       </div>
       <Template
-
-      aKey={this.handleLeftClick}
-      dKey={this.handleRightClick}
-      sKey={this.handleDownClick}
-      wKey={this.handleUpClick}
-
-      kKey={this.handleBClick}
       aButton={this.handleAClick}
       bButton={this.handleBClick}
-      upPress={this.handleUpClick}
-      downPress={this.handleDownClick}
       leftPress={this.handleLeftClick}
       rightPress={this.handleRightClick}
       ejectPress={this.handleEjectClick}
