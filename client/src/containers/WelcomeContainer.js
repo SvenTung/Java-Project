@@ -4,9 +4,11 @@ import NavBar from '../Navbar.js'
 const WelcomeContainer = (props) => {
   return (
     <div className="content">
+    <br/>
+    <h3>Welcome to GSS Arcade</h3>
       <h3 href="/select">Games</h3>
       <a href="/rps">Rock, Paper, Scissors</a>
-      <p>Welcome to GSS Arcade</p>
+
       <h6>Upload games +</h6>
        <div>
        <form >
