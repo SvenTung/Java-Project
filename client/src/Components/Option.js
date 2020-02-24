@@ -1,15 +1,10 @@
-import React, {Fragment} from 'react';
+import React from 'react';
 
 import Rock from './images/Rock'
 import Paper from './images/Paper'
 import Scissors from './images/Scissors'
 
 const Option = (props) => {
-  const options = {
-    "rock": Rock,
-    "paper": Paper,
-    "scissors": Scissors
-  };
 
   return (
     //replace this code with our own option images
