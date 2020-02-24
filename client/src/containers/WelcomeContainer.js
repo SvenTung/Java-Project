@@ -5,21 +5,24 @@ const WelcomeContainer = (props) => {
     <div className="content">
     <br/>
     <h3>Welcome to GSS Arcade</h3>
-      <h3 href="/select">Games</h3>
-      <a href="/rps">Rock, Paper, Scissors</a>
+      <h2 href="/select">Recently Uploaded Games</h2>
+      <a href="/rps"><img src="/assets/cartridge1.png" href="/rps" style={{height: "25vh"}} /></a>
+      <a href="/rps2"><img src="/assets/cartridge3.png" href="/rps" style={{height: "25vh"}} /></a>
 
       <h6>Upload games +</h6>
+
        <div>
        <form >
        <label >Game Name: </label>
-      <input type="text" name="name"/>
+       <input type="text" name="name"/>
       <br/>
       <label >Bit: </label>
         <input type="number" name="bit"/>
         <br/>
         <button className="yol" type="submit">Add Game</button>
       </form>
-    </div>
+      </div>
+
     </div>
 
   )

@@ -87,7 +87,7 @@ class RpsContainer extends Component {
       onKeyDown={this.handleKeyPress}
       >
       <div className="cartridge-container">
-      {eject ? ( <img src="/assets/cartridge.png" style={{height: "45vh"}} className="cartridge" alt=""/>): (<></>)}
+      {eject ? ( <img src="/assets/cartridge2.png" style={{height: "45vh"}} className="cartridge" alt=""/>): (<></>)}
       </div>
       <Template
       aButton={this.handleAClick}
