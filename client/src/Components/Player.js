@@ -18,12 +18,6 @@ const Player = (props) => {
         <button>
           <Option
             option={props.player.selectedOption}
-            color={props.gameState !== 'active' ?
-            (
-              props.player.winner ? 'green' : 'red'
-            ) : (
-              ''
-            )}
           />
         </button>
 
