@@ -70,13 +70,10 @@ class RpsContainer extends Component {
   render(){
     const { eject } = this.state;
     return (
-
       <div  className="main-content"
       tabIndex={-1}
       onKeyDown={this.handleKeyPress}
       >
-
-
       <p>Rock Paper Scissors!</p>
       <div className="cartridge-container">
       {eject ? ( <img src="/assets/cartridge.png" style={{height: "45vh"}} className="cartridge" />): (<div></div>)}
@@ -100,8 +97,6 @@ class RpsContainer extends Component {
       startPress={this.handleStartClick}
       />
       <RockPaperScissors/>
-
-
       </div>
     )
   }
