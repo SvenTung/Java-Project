@@ -10,9 +10,6 @@ body {
   background-repeat:space;
   background-size: cover;
   position: relative;
-
-
-
 }
 
 h5{
@@ -31,8 +28,8 @@ code {
   width: 100%; height: 100%;
   padding-top: 137px;
   font-family: 'Press Start 2P';
-
 }
+
 h5{
   margin: 5px;
 }
@@ -104,3 +101,4 @@ li a {
 li a:hover {
   background-color: #555;
   color: white;
+}

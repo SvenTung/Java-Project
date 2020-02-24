@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import RockPaperScissors from  '../components/RockPaperScissors'
-import Template from '../components/template'
+import Template from '../components/Template'
 
 class RpsContainer extends Component {
   constructor(props){
@@ -70,13 +70,10 @@ class RpsContainer extends Component {
   render(){
     const { eject } = this.state;
     return (
-
       <div  className="main-content"
       tabIndex={-1}
       onKeyDown={this.handleKeyPress}
       >
-
-
       <p>Rock Paper Scissors!</p>
       <div className="cartridge-container">
       {eject ? ( <img src="/assets/cartridge.png" style={{height: "45vh"}} className="cartridge" />): (<div></div>)}
@@ -98,9 +95,6 @@ class RpsContainer extends Component {
       ejectPress={this.handleEjectClick}
       startPress={this.handleStartClick}
       />
-
-
-
       </div>
     )
   }
