@@ -86,7 +86,7 @@ class RockPaperScissors extends Component {
               )
             )
             }
-            <button onClick={() => {this.resetGame()}}>Play Again</button>
+            <button className="yol" onClick={() => {this.resetGame()}}>Play Again</button>
           </div>
       ) : <></>}
       </div>

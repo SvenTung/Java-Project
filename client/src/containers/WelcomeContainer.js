@@ -17,7 +17,7 @@ const WelcomeContainer = (props) => {
       <label >Bit: </label>
         <input type="number" name="bit"/>
         <br/>
-        <button type="submit">Add Game</button>
+        <button className="yol" type="submit">Add Game</button>
       </form>
     </div>
     </div>
