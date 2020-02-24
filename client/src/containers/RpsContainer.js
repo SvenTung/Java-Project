@@ -8,6 +8,12 @@ class RpsContainer extends Component {
     super(props);
     this.state = {
       player: {name: "One", selectedOption: "", wins: 0},
+      computer: {name: "Computer", selectedOption: "", wins: 0},
+      options: {
+        "rock": ["scissors"],
+        "paper": ["rock"],
+        "scissors": ["paper"]
+      },
       eject: false,
       choices: ["rock", "paper", "scissors"],
       hover: 0
@@ -16,6 +22,9 @@ class RpsContainer extends Component {
     this.handleRightClick = this.handleRightClick.bind(this);
     this.handleEjectClick = this.handleEjectClick.bind(this);
     this.handleAClick = this.handleAClick.bind(this);
+    this.selectComputerOption = this.selectComputerOption.bind(this);
+    this.checkGameState = this.checkGameState.bind(this);
+
   }
 
   handleLeftClick(){
@@ -38,6 +47,7 @@ class RpsContainer extends Component {
   }
   handleAClick(){
     this.state.player.selectedOption = this.state.choices[this.state.hover];
+    this.checkGameState()
   }
 
   handleBClick(){
@@ -50,6 +60,27 @@ class RpsContainer extends Component {
     console.log("Eject")
     this.setState({ eject: !this.state.eject })
   }
+
+  selectComputerOption(){
+    const choice = ["rock", "paper", "scissors"]
+    const randomNumber = Math.floor(Math.random() * 3)
+    this.state.computer.selectedOption = (choice[randomNumber])
+    console.log(choice[randomNumber]);
+  }
+
+  checkGameState(){
+    this.selectComputerOption()
+    this.setState({gamesPlayed: this.state.gamesPlayed + 1});
+    if (this.state.options[this.state.player.selectedOption].includes(this.state.computer.selectedOption)) {
+      this.state.player.wins += 1;
+      this.setState({gameState: 'win'});
+    } else if (this.state.options[this.state.computer.selectedOption].includes(this.state.player.selectedOption)) {
+      this.state.computer.wins += 1;
+      this.setState({gameState: 'lose'});
+    } else {
+      this.setState({gameState: 'draw'});
+    }
+  };
 
   handleKeyPress = (event) => {
     switch(event.key){
@@ -97,7 +128,7 @@ class RpsContainer extends Component {
       ejectPress={this.handleEjectClick}
       startPress={this.handleStartClick}
       />
-      <RockPaperScissors player={this.state.player}/>
+      <RockPaperScissors player={this.state.player} computer={this.state.computer} checkGameState={this.checkGameState}/>
       <Arrow choices={this.state.choices} hover={this.state.hover}/>
       </div>
     )
