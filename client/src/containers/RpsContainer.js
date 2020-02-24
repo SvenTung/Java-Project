@@ -85,7 +85,7 @@ class RpsContainer extends Component {
       <div className="main-content"
       onKeyDown={this.handleKeyPress}
       >
-      <p>Rock Paper Scissors!</p>
+
       <div className="cartridge-container">
       {eject ? ( <img src="/assets/cartridge.png" style={{height: "45vh"}} className="cartridge" />): (<div></div>)}
       </div>
