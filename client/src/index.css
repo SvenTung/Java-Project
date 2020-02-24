@@ -5,6 +5,14 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: darkgray;
+  background-image:url('https://cdn.hipwallpaper.com/m/3/96/PS8Euf.png');
+  background-repeat:space;
+  background-size: cover;
+  position: relative;
+
+
+
 }
 
 h5{
@@ -18,6 +26,24 @@ code {
 
 .game{
   margin: -614px;
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  padding-top: 137px;
+  font-family: 'Press Start 2P';
+
+}
+h5{
+  margin: 5px;
+}
+
+.gameboy{
+  height: 0;
+  padding-bottom: 56.25%;
+  position: relative;
+
+}
+.player{
 
 }
 
@@ -37,5 +63,44 @@ code {
   z-index: auto;
 }
 
-
 @-webkit-keyframes slide-top{0%{-webkit-transform:translateY(0);transform:translateY(0)}100%{-webkit-transform:translateY(-100px);transform:translateY(-100px)}}@keyframes slide-top{0%{-webkit-transform:translateY(0);transform:translateY(0)}100%{-webkit-transform:translateY(-100px);transform:translateY(-100px)}}
+
+p{
+  margin-top: 7px;
+  margin-bottom: 10px;
+}
+
+.content{
+  font-size: 35px;
+  text: white;
+  font-family: 'Press Start 2P';
+}
+
+a{
+  text-decoration:none;
+  text-decoration-color:white;
+}
+
+label{
+  font-size: 15px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 100px;
+  background-color: #f1f1f1;
+  text-align: center;
+}
+
+li a {
+  display: block;
+  width: 100px;
+  padding: 8px 0px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #555;
+  color: white;

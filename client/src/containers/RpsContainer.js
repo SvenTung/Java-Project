@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import RockPaperScissors from  '../components/RockPaperScissors'
-import Template from '../components/template'
+import Template from '../components/Template'
 
 class RpsContainer extends Component {
   constructor(props){
@@ -99,7 +99,7 @@ class RpsContainer extends Component {
       ejectPress={this.handleEjectClick}
       startPress={this.handleStartClick}
       />
-<RockPaperScissors/>
+      <RockPaperScissors/>
 
 
       </div>
