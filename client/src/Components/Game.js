@@ -3,10 +3,6 @@ import {Link} from 'react-router-dom';
 
 const Game = (props) => {
 
-  if (!props.game){
-    return "Loading..."
-  }
-
   const url = "/" + props.game.name;
 
   return (
