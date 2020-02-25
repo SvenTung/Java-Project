@@ -108,8 +108,10 @@ button{
 }
 
 form {
-  padding-bottom: 50px;
-  padding-left:10%;
+  padding-bottom: 30px;
+  padding-left:5%;
+  color: greenyellow;
+  text-shadow: 3px 3px black;
 }
 
 h3{
@@ -130,7 +132,7 @@ h3{
 }
 
 .share-btns {
-  padding-top: 1rem;
+  padding-top: 5rem;
   padding-bottom: 1rem;
   display: flex;
   align-items:center;
@@ -166,3 +168,32 @@ h3{
 .share-btn.hackernews { background: #ff6600; }
 .share-btn.linkedin    { background: #4875B4; }
 .share-btn.email { background: #444444; }
+
+.upload{
+  left: 20%;
+}
+
+h6{
+  font-size: 25px;
+  text-shadow: 3px 4px black;
+  color: forestgreen;
+  text-decoration: underline;
+  padding: 0;
+
+}
+input[type="file"] {
+    display: none;
+
+}
+.custom-file-upload {
+    border: 1px solid black;
+    display: inline-block;
+    padding: 8px 16px;
+    cursor: pointer;
+    color: blue;
+    background-color: orangered;
+}
+.uploadbtn{
+  padding-left: 70px;
+  padding-bottom: 50px;
+}
