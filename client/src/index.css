@@ -119,6 +119,11 @@ h3{
   text-shadow: 3px 3px black;
 }
 
+.hoveredOption{
+  border: solid black 1px;
+  background-color: red;
+}
+
 .main-content{
   padding-top: 100px;
 }
