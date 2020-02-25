@@ -32,17 +32,17 @@ code {
 
 .game, .startScreen, .gameOverScreen{
   position: absolute;
-  top: 206px; left: 44.5%;
+  top: 190px; left: 44.5%;
   width: 300px;
   font-family: 'Press Start 2P';
 }
 
 .game{
-  top: 110px;
+  top: 102px;
 }
 
 .gameOverScreen{
-  top: 306px;
+  top: 282px;
 }
 
 .gameboy{
@@ -97,7 +97,7 @@ label{
   position: absolute;
   margin-top: 0px;
   padding-top: 3px;
-  left:41.8%;
+  left:45%;
 }
 
 #template{
