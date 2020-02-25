@@ -25,7 +25,7 @@ class RpsContainer extends Component{
             <GameOverScreen />
           </div>
         ) : (
-          <div>
+          <div className="main-game">
             <CodeBoyTemplate />
             <RockPaperScissors eject={this.state.ejected} handleEjectClick={this.handleEjectClick}/>
           </div>

@@ -32,13 +32,13 @@ code {
 
 .game, .startScreen, .gameOverScreen{
   position: absolute;
-  top: 190px; left: 44.5%;
+  top: 215px; left: 44.5%;
   width: 300px;
   font-family: 'Press Start 2P';
 }
 
 .game{
-  top: 102px;
+  top: 130px;
 }
 
 .gameOverScreen{
@@ -47,7 +47,7 @@ code {
 
 .gameboy{
   height: 0;
-  padding-bottom: 56.25%;
+  padding-bottom: 25%;
   position: absolute;
   left: 40%;
   z-index: -1;
@@ -223,5 +223,9 @@ input[type="file"] {
   color: red;
   text-shadow: 2px 1px black;
 
+
+}
+.main-game{
+  padding-top: 30px;
 
 }
