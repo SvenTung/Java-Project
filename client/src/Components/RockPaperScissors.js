@@ -88,7 +88,6 @@ class RockPaperScissors extends Component {
   };
 
   handleKeyPress = (event) => {
-    console.log(event.key);
     switch(event.key){
       case 'a':
       case 's':

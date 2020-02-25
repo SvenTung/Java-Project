@@ -7,7 +7,7 @@ const WelcomeContainer = (props) => {
     <h3>Welcome to GSS Arcade</h3>
       <h2 href="/select">Recently Uploaded Games</h2>
       <a href="/rps"><img src="/assets/cartridge1.png" href="/rps" style={{height: "25vh"}} alt=''/></a>
-      <a href="/rps2"><img src="/assets/cartridge3.png" href="/rps" style={{height: "25vh"}} alt=''/></a>
+      <a href="/rps2"><img src="/assets/cartridge3.png" href="/rps2" style={{height: "25vh"}} alt=''/></a>
 
       <div>
        <form >
