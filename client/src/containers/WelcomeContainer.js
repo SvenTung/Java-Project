@@ -10,6 +10,7 @@ const WelcomeContainer = (props) => {
       <a href="/rps2"><img src="/assets/cartridge3.png" href="/rps" style={{height: "25vh"}} /></a>
 
       <h6>Upload games +</h6>
+      <a href="/rps2"><img src="/assets/cartridgeCreate.png" href="/" style={{height: "12vh"}} /></a>
 
        <div>
        <form >
