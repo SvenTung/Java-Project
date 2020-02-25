@@ -98,6 +98,7 @@ class RpsContainer extends Component {
   };
 
   handleKeyPress = (event) => {
+    console.log(event);
     switch(event.key){
       case 'a':
       case 's':
@@ -123,6 +124,8 @@ class RpsContainer extends Component {
         this.setState({hover: 2})
       break
       case 'Enter':
+      case ' ':
+        event.preventDefault()
         this.handleAClick()
       break
       default:
