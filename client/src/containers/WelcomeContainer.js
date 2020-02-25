@@ -6,8 +6,8 @@ const WelcomeContainer = (props) => {
     <br/>
     <h3>Welcome to GSS Arcade</h3>
       <h2 href="/select">Recently Uploaded Games</h2>
-      <a href="/rps"><img src="/assets/cartridge1.png" href="/rps" style={{height: "25vh"}} /></a>
-      <a href="/rps2"><img src="/assets/cartridge3.png" href="/rps" style={{height: "25vh"}} /></a>
+      <a href="/rps"><img src="/assets/cartridge1.png" href="/rps" style={{height: "25vh"}} alt=''/></a>
+      <a href="/rps2"><img src="/assets/cartridge3.png" href="/rps" style={{height: "25vh"}} alt=''/></a>
 
       <div>
        <form >
@@ -32,36 +32,42 @@ const WelcomeContainer = (props) => {
        class="share-btn twitter"
        href="https://twitter.com/share?url=<URL>&text=<TITLE>&via=GregorySchier"
        target="_blank"
+       rel="noopener noreferrer"
      >Twitter</a>
 
      <a
        class="share-btn facebook"
        href="https://www.facebook.com/sharer/sharer.php?u=#url<URL>"
        target="_blank"
+       rel="noopener noreferrer"
      >Facebook</a>
 
      <a
        class="share-btn reddit"
        href="https://reddit.com/submit?url=<URL>&title=<TITLE>"
        target="_blank"
+       rel="noopener noreferrer"
      >Reddit</a>
 
      <a
        class="share-btn hackernews"
        href="https://news.ycombinator.com/submitlink?u=<URL>&t=<TITLE>"
        target="_blank"
+       rel="noopener noreferrer"
      >Hacker News</a>
 
      <a
        class="share-btn linkedin"
        href="https://www.linkedin.com/shareArticle?url=<URL>&title=<TITLE>"
        target="_blank"
+       rel="noopener noreferrer"
      >LinkedIn</a>
 
      <a
        class="share-btn email"
        href="mailto:?subject=<TITLE>&body=<URL>"
        target="_blank"
+       rel="noopener noreferrer"
      >Email</a>
    </div>
 

@@ -30,7 +30,7 @@ code {
   monospace;
 }
 
-.game{
+.game, .startScreen{
   position: absolute;
   top: 206px; left: 45.3%;
   width: 300px;

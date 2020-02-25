@@ -62,7 +62,6 @@ const ActionButtons = (props) => {
         <stop offset="1" stopColor="#3C3E3A"></stop>
       </radialGradient>
 
-      // B button
       <path
         fill="#482A50"
         d="M444.4 648.8c0 19-15.4 34.3-34.3 34.3-19 0-34.3-15.4-34.3-34.3 0-19 15.4-34.3 34.3-34.3s34.3 15.3 34.3 34.3z"
@@ -73,7 +72,6 @@ const ActionButtons = (props) => {
         onClick={props.aButton}
       ></path>
 
-      //A button
       <path
         fill="#482A50"
         d="M538.3 606.4c0 19-15.4 34.3-34.3 34.3-19 0-34.3-15.4-34.3-34.3S485 572 504 572c18.9 0 34.3 15.4 34.3 34.4z"
@@ -84,23 +82,21 @@ const ActionButtons = (props) => {
         onClick={props.aButton}
       ></path>
 
-      //Up square
+
       <path d="M107.4 572H142.8V607.4H107.4z" onClick={props.rightPress}></path>
-      //Down square
+
       <path d="M108.3 665.4H143.7V700.8H108.3z" onClick={props.leftPress}></path>
-      //Left square
+
       <path d="M64.1 617.5H99.5V652.9H64.1z" onClick={props.leftPress}></path>
-      //Right square
+
       <path d="M150.4 617.5H185.8V652.9H150.4z" onClick={props.rightPress}></path>
 
-      //Start button
       <path
         fill="url(#g)"
         d="M283.1 775.4l48.9-25.1c4.2-2.2 9.4-.5 11.5 3.7 2.2 4.2.5 9.4-3.7 11.5l-48.9 25.1c-4.2 2.2-9.4.5-11.5-3.7-2.2-4.2-.5-9.3 3.7-11.5z"
         onClick={props.startPress}
       ></path>
 
-      //Select button
       <g transform="translate(-96.429 -.357)">
         <path
           fill="url(#h)"

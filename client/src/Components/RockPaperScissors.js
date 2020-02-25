@@ -14,9 +14,9 @@ class RockPaperScissors extends Component {
         "paper": ["rock"],
         "scissors": ["paper"]
       },
-      eject: false,
       choices: ["rock", "paper", "scissors"],
-      hover: 0
+      hover: 0,
+      started: false
     }
   };
 
@@ -48,7 +48,7 @@ class RockPaperScissors extends Component {
   }
 
   handleStartClick = () => {
-    console.log("Start");
+    this.setState({started: true})
   }
 
   handleEjectClick = () => {
@@ -93,6 +93,7 @@ class RockPaperScissors extends Component {
   };
 
   handleKeyPress = (event) => {
+    console.log(event.key);
     switch(event.key){
       case 'a':
       case 's':
@@ -122,6 +123,10 @@ class RockPaperScissors extends Component {
         event.preventDefault()
         this.handleAClick()
       break
+      case 'Backspace':
+        event.preventDefault()
+        this.handleStartClick()
+      break
       default:
       break
     }
@@ -135,30 +140,31 @@ class RockPaperScissors extends Component {
   };
 
   render = () => {
-    const {eject} = this.state;
-      return (
-        <div tabIndex={-1} onKeyDown={this.handleKeyPress}>
-          <div className="cartridge-container">
-            {eject ? ( <img src="/assets/cartridge2.png" style={{height: "45vh"}} className="cartridge" alt=""/>): (<></>)}
+    return (
+      <div tabIndex={-1} onKeyDown={this.handleKeyPress}>
+        <ActionButtons
+        aButton={this.handleAClick}
+        leftPress={this.handleLeftClick}
+        rightPress={this.handleRightClick}
+        ejectPress={this.handleEjectClick}
+        startPress={this.handleStartClick}
+        />
+        {!this.state.started ? (
+          <div className={"startScreen"}>
+            <h5>Press Start!</h5>
           </div>
-          <ActionButtons
-          aButton={this.handleAClick}
-          leftPress={this.handleLeftClick}
-          rightPress={this.handleRightClick}
-          ejectPress={this.handleEjectClick}
-          startPress={this.handleStartClick}
-          />
+        ) : (
           <div className={"game"}>
             <h5>Games played: {this.state.gamesPlayed}</h5>
             <h5>Player {this.state.player.name} ({this.state.player.wins} wins)</h5>
             <h5>Computer wins: {this.state.computer.wins}</h5>
-              <Player
-                playerId={0}
-                player={this.state.player}
-                setPlayerOption={this.setPlayerOption}
-                gameState={this.state.gameState}
-                hoveredOption={this.state.choices[this.state.hover]}
-              />
+            <Player
+              playerId={0}
+              player={this.state.player}
+              setPlayerOption={this.setPlayerOption}
+              gameState={this.state.gameState}
+              hoveredOption={this.state.choices[this.state.hover]}
+            />
             {this.state.player.selectedOption !== '' ? (
               <div>
                 <p>You chose {this.state.player.selectedOption.toUpperCase()}</p>
@@ -175,8 +181,9 @@ class RockPaperScissors extends Component {
                 }
                 <button className="resetButton" onClick={() => {this.resetGame()}}>Play Again</button>
               </div>
-            ) : <></>}
+          ) : <></>}
           </div>
+        )}
       </div>
     )
   }
