@@ -9,7 +9,6 @@ class RpsContainer extends Component{
   }
 
   handleEjectClick = () => {
-    console.log("eject me!");
     this.setState({ejected: true})
   }
 
