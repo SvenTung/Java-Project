@@ -21,26 +21,30 @@ class RockPaperScissors extends Component {
   };
 
   handleLeftClick = () => {
-    this.setState({hover: this.state.hover -= 1})
-    if (this.state.hover === 3) {
+    let hover = this.state.hover
+    this.setState({hover: hover -= 1})
+    if (hover === 3) {
       this.setState({hover: 0})
-    } else if (this.state.hover === -1) {
+    } else if (hover === -1) {
       this.setState({hover: 2})
     }
   };
 
   handleRightClick = () => {
-    this.setState({hover: this.state.hover += 1})
-    if (this.state.hover === 3) {
+    let hover = this.state.hover
+    this.setState({hover: hover += 1})
+    if (hover === 3) {
       this.setState({hover: 0})
-    } else if (this.state.hover === -1) {
+    } else if (hover === -1) {
       this.setState({hover: 2})
     }
   };
 
   handleAClick = () => {
     if (this.state.gameState === "active") {
-      this.state.player.selectedOption = this.state.choices[this.state.hover];
+      let player = this.state.player
+      player.selectedOption = this.state.choices[this.state.hover];
+      this.setState({player: player})
       this.checkGameState()
     } else {
       this.resetGame()
