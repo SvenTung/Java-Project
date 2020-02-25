@@ -103,12 +103,14 @@ class RpsContainer extends Component {
       case 's':
       case 'ArrowLeft':
       case 'ArrowDown':
+        event.preventDefault()
         this.handleLeftClick()
       break
       case 'd':
       case 'w':
       case 'ArrowRight':
       case 'ArrowUp':
+        event.preventDefault()
         this.handleRightClick()
       break
       case '1':
