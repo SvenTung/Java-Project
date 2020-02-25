@@ -3,7 +3,14 @@ import ActionButtons from './ActionButtons.js'
 
 class GameOverScreen extends Component {
   render = () => {
-    return (null)
+    return (
+      <div>
+        <ActionButtons />
+        <div className={"gameOverScreen"}>
+          <h5>Game Over</h5>
+        </div>
+      </div>
+    )
   }
 };
 

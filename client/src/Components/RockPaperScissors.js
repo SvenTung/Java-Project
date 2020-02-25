@@ -27,7 +27,7 @@ class RockPaperScissors extends Component {
     } else if (this.state.hover === -1) {
       this.setState({hover: 2})
     }
-  }
+  };
 
   handleRightClick = () => {
     this.setState({hover: this.state.hover += 1})
@@ -36,7 +36,7 @@ class RockPaperScissors extends Component {
     } else if (this.state.hover === -1) {
       this.setState({hover: 2})
     }
-  }
+  };
 
   handleAClick = () => {
     if (this.state.gameState === "active") {
@@ -45,16 +45,11 @@ class RockPaperScissors extends Component {
     } else {
       this.resetGame()
     }
-  }
+  };
 
   handleStartClick = () => {
     this.setState({started: true})
-  }
-
-  handleEjectClick = () => {
-    console.log("Eject")
-    this.setState({ eject: !this.state.eject })
-  }
+  };
 
   selectComputerOption = () => {
     const choice = ["rock", "paper", "scissors"]
@@ -62,7 +57,7 @@ class RockPaperScissors extends Component {
     const updatedComputer = this.state.computer
     updatedComputer.selectedOption = (choice[randomNumber])
     this.setState({computer: updatedComputer})
-  }
+  };
 
   checkGameState = () => {
     this.selectComputerOption()
@@ -130,7 +125,7 @@ class RockPaperScissors extends Component {
       default:
       break
     }
-  }
+  };
 
   setPlayerOption = (option) => {
     const updatedPlayer = this.state.player
@@ -146,7 +141,7 @@ class RockPaperScissors extends Component {
         aButton={this.handleAClick}
         leftPress={this.handleLeftClick}
         rightPress={this.handleRightClick}
-        ejectPress={this.handleEjectClick}
+        ejectPress={this.props.handleEjectClick}
         startPress={this.handleStartClick}
         />
         {!this.state.started ? (

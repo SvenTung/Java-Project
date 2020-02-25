@@ -30,11 +30,19 @@ code {
   monospace;
 }
 
-.game, .startScreen{
+.game, .startScreen, .gameOverScreen{
   position: absolute;
   top: 206px; left: 44.5%;
   width: 300px;
   font-family: 'Press Start 2P';
+}
+
+.game{
+  top: 110px;
+}
+
+.gameOverScreen{
+  top: 306px;
 }
 
 .gameboy{
@@ -132,7 +140,7 @@ h3{
   background-color: red;
 }
 
-.main-content{
+.gameOverDiv{
   padding-top: 100px;
 }
 

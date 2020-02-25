@@ -8,23 +8,28 @@ class RpsContainer extends Component{
     ejected: false
   }
 
-  eject = () => {
+  handleEjectClick = () => {
+    console.log("eject me!");
     this.setState({ejected: true})
   }
 
   render = () => {
-    const {eject} = this.state.ejected;
     return(
       <div className = "main-content">
-      <div className="cartridge-container">
-        {eject ? (
-          <img src="/assets/cartridge2.png" style={{height: "45vh"}} className="cartridge" alt=""/>
-        ): (<></>)}
-      </div>
-        <CodeBoyTemplate />
-        {eject ? (
-          <GameOverScreen />
-        ) : (<RockPaperScissors />)}
+        {this.state.ejected ? (
+          <div className="gameOverDiv">
+            <div className="cartridge-container">
+              <img src="/assets/cartridge2.png" style={{height: "45vh"}} className="cartridge" alt=""/>
+            </div>
+            <CodeBoyTemplate />
+            <GameOverScreen />
+          </div>
+        ) : (
+          <div>
+            <CodeBoyTemplate />
+            <RockPaperScissors eject={this.state.ejected} handleEjectClick={this.handleEjectClick}/>
+          </div>
+        )}
       </div>
     )
   }
