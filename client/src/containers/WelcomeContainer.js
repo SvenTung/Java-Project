@@ -9,19 +9,22 @@ const WelcomeContainer = (props) => {
       <a href="/rps"><img src="/assets/cartridge1.png" href="/rps" style={{height: "25vh"}} /></a>
       <a href="/rps2"><img src="/assets/cartridge3.png" href="/rps" style={{height: "25vh"}} /></a>
 
-      <h6>Upload games +</h6>
-      <a href="/rps2"><img src="/assets/cartridgeCreate.png" href="/" style={{height: "12vh"}} /></a>
-
-       <div>
+      <div>
        <form >
+       <h6>Upload Game</h6>
        <label >Game Name: </label>
        <input type="text" name="name"/>
       <br/>
-      <label >Bit: </label>
+      <label >Games URL:  </label>
         <input type="number" name="bit"/>
         <br/>
-        <button className="yol" type="submit">Add Game</button>
-      </form>
+        </form>
+        <div className="uploadbtn">
+        <label class="custom-file-upload">
+    <input type="file"/>
+    <i class="upload"></i> Game Upload
+</label>
+      </div>
       </div>
       <div class="share-btns">
       <br/>
