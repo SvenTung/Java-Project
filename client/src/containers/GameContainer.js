@@ -5,8 +5,10 @@ import RpsContainer from './RpsContainer';
 import Rps2Container from './Rps2Container';
 import GameSelectContainer from './GameSelectContainer';
 
+
 const GameContainer = () => {
   return (
+
     <Router>
     <Fragment>
     <Switch>
@@ -14,9 +16,11 @@ const GameContainer = () => {
       <Route exact path="/rps" component={RpsContainer} />
       <Route exact path="/rps2" component={Rps2Container} />
       <Route exact path="/select" component={GameSelectContainer} />
+
     </Switch>
     </Fragment>
     </Router>
+
   )
 }
 
