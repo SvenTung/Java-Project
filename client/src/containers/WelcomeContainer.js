@@ -18,6 +18,8 @@ const WelcomeContainer = (props) => {
       <label >Games URL:  </label>
         <input type="number" name="bit"/>
         <br/>
+        <button type="submit" className="submithome">Submit</button>
+        <br/>
         </form>
         <div className="uploadbtn">
         <label class="custom-file-upload">
@@ -69,11 +71,14 @@ const WelcomeContainer = (props) => {
        target="_blank"
        rel="noopener noreferrer"
      >Email</a>
+
    </div>
 
+   <p>GSS Styled &#169;</p>
     </div>
 
   )
+
 }
 
 export default WelcomeContainer;

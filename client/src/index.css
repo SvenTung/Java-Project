@@ -32,7 +32,7 @@ code {
 
 .game, .startScreen{
   position: absolute;
-  top: 206px; left: 45.3%;
+  top: 206px; left: 44.5%;
   width: 300px;
   font-family: 'Press Start 2P';
 }
@@ -104,6 +104,7 @@ button:hover{
 }
 button{
   background-color: limegreen;
+  cursor: pointer;
 }
 
 .resetButton{
@@ -183,6 +184,7 @@ h6{
   color: forestgreen;
   text-decoration: underline;
   padding: 0;
+  cursor: pointer;
 
 }
 input[type="file"] {
@@ -191,13 +193,27 @@ input[type="file"] {
 }
 .custom-file-upload {
     border: 1px solid black;
+    text-shadow: 1px 1px black;
     display: inline-block;
-    padding: 8px 16px;
+    padding: 6px 12px;
     cursor: pointer;
     color: blue;
     background-color: orangered;
 }
 .uploadbtn{
   padding-left: 70px;
-  padding-bottom: 50px;
+  padding-bottom: 80px;
+}
+
+.submithome{
+
+  background-color: mediumpurple;
+  font-family: 'Press Start 2P';
+  padding-left: 8px;
+  padding-bottom: 4px;
+  padding-top: 4px;
+  color: red;
+  text-shadow: 2px 1px black;
+
+
 }
