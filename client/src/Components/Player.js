@@ -4,23 +4,28 @@ import Option from "./Option";
 const Player = (props) => {
   return (
     <div className={"player"}>
-      <h5>Player {props.player.name} ({props.player.wins} wins)</h5>
       {props.player.selectedOption === '' ? (
         <>
-          <button onClick={() => props.setPlayerOption(props.playerId, "rock")} className={"playerOption"}>
-          <Option option={"rock"}/></button>
-          <button onClick={() => props.setPlayerOption(props.playerId, "paper")} className={"playerOption"}>
-          <Option option={"paper"}/></button>
-          <button onClick={() => props.setPlayerOption(props.playerId, "scissors")}
-          className={"playerOption"}><Option option={"scissors"}/></button>
+        {props.hoveredOption === 'rock' ? (
+          <button onClick={() => props.setPlayerOption("rock")} className={"hoveredOption"}> <Option option={"rock"}/></button>
+        ) : (
+          <button onClick={() => props.setPlayerOption("rock")} className={"playerOption"}> <Option option={"rock"}/></button>
+        )}
+        {props.hoveredOption === 'paper' ? (
+          <button onClick={() => props.setPlayerOption("paper")} className={"hoveredOption"}> <Option option={"paper"}/></button>
+        ) : (
+          <button onClick={() => props.setPlayerOption("paper")} className={"playerOption"}> <Option option={"paper"}/></button>
+        )}
+        {props.hoveredOption === 'scissors' ? (
+          <button onClick={() => props.setPlayerOption("scissors")} className={"hoveredOption"}> <Option option={"scissors"}/></button>
+        ) : (
+          <button onClick={() => props.setPlayerOption("scissors")} className={"playerOption"}> <Option option={"scissors"}/></button>
+        )}
         </>
       ) : (
-        <button>
-          <Option
-            option={props.player.selectedOption}
-          />
-        </button>
-
+        <Option
+          option={props.player.selectedOption}
+        />
       )}
     </div>
   )

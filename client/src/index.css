@@ -1,47 +1,96 @@
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: darkgray;
-  background-image:url('https://cdn.hipwallpaper.com/m/3/96/PS8Euf.png');
+  background-image:url('/assets/1094283.jpg');
   background-repeat:space;
   background-size: cover;
   position: relative;
 }
 
 h5{
-  margin: 0px;
+  margin-bottom: 10px;
+  margin-top: -4px;
+  font-size: 11px;
+}
+
+h2{
+  font-size: 26px;
+  color: mediumpurple;
+  padding-bottom: 30px;
+  text-shadow: 2px 2px black;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  monospace;
 }
 
+<<<<<<< HEAD
 .game{
   
+=======
+.game, .startScreen, .gameOverScreen{
+>>>>>>> 0b1d8bc5dc1a23e64b766b7c1b2a714dfdc73ab8
   position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  padding-top: 137px;
+  top: 195px; left: 44.5%;
+  width: 300px;
   font-family: 'Press Start 2P';
 }
 
-h5{
-  margin: 5px;
+.game{
+  top: 130px;
+}
+
+.gameOverScreen{
+  top: 282px;
 }
 
 .gameboy{
   height: 0;
-  padding-bottom: 56.25%;
-  position: relative;
-
+  padding-bottom: 25%;
+  position: absolute;
+  left: 40%;
+  z-index: -1;
 }
-.player{
 
+.action-buttons{
+  position: absolute;
+  left: 40%;
+}
+
+.player{
+  display: inline-block;
+  text-align: center;
+  align-items: flex-start;
+}
+
+p{
+  margin-top: 5px;
+  margin-bottom: 9px;
+  font-size: 11px;
+}
+
+.content{
+  padding-top: 0px;
+  font-size: 35px;
+  text: white;
+  font-family: 'Press Start 2P';
+  padding-bottom: 50px;
+}
+
+a{
+  text-decoration:none;
+  color:white;
+  padding-left: 50px;
+}
+
+label{
+  font-size: 15px;
 }
 
 .cartridge{
@@ -49,11 +98,11 @@ h5{
 }
 
 .cartridge-container{
-    z-index: -1;
-    position: absolute;
-    margin-top: 0px;
-    padding-top: 3px;
-    padding-left: 262px;
+  z-index: -1;
+  position: absolute;
+  margin-top: 0px;
+  padding-top: 3px;
+  left:45%;
 }
 
 #template{
@@ -62,43 +111,126 @@ h5{
 
 @-webkit-keyframes slide-top{0%{-webkit-transform:translateY(0);transform:translateY(0)}100%{-webkit-transform:translateY(-100px);transform:translateY(-100px)}}@keyframes slide-top{0%{-webkit-transform:translateY(0);transform:translateY(0)}100%{-webkit-transform:translateY(-100px);transform:translateY(-100px)}}
 
-p{
-  margin-top: 7px;
-  margin-bottom: 10px;
+button:hover{
+  border: solid black 1px;
+  background-color: red;
+}
+button{
+  background-color: limegreen;
+  cursor: pointer;
 }
 
-.content{
-  font-size: 35px;
-  text: white;
+.resetButton{
+  background: burlywood;
   font-family: 'Press Start 2P';
 }
 
-a{
-  text-decoration:none;
-  text-decoration-color:white;
+form {
+  padding-bottom: 30px;
+  padding-left:5%;
+  color: greenyellow;
+  text-shadow: 3px 3px black;
 }
 
-label{
-  font-size: 15px;
+h3{
+  color: deeppink;
+  padding: 10px;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-shadow: 3px 3px black;
 }
 
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  width: 100px;
-  background-color: #f1f1f1;
+.hoveredOption{
+  border: solid black 1px;
+  background-color: red;
+}
+
+.gameOverDiv{
+  padding-top: 100px;
+}
+
+.share-btns {
+  padding-top: 5rem;
+  padding-bottom: 1rem;
+  display: flex;
+  align-items:center;
+  justify-content: center;
+}
+
+.share-btn {
+  display: inline-block;
+  color: #ffffff;
+  border: none;
+  padding: 0.1em 0.6em;
+  outline: none;
   text-align: center;
+  font-size: 0.4em;
+  margin: 0 0.2em;
 }
 
-li a {
-  display: block;
-  width: 100px;
-  padding: 8px 0px;
+.share-btn:focus,
+.share-btn:hover {
   text-decoration: none;
+  opacity: 0.8;
 }
 
-li a:hover {
-  background-color: #555;
-  color: white;
+.share-btn:active {
+  color: #e2e2e2;
+}
+
+.share-btn.twitter { background: #55acee; }
+.share-btn.google-plus { background: #dd4b39; }
+.share-btn.facebook { background: #3B5998; }
+.share-btn.stumbleupon { background: #EB4823; }
+.share-btn.reddit { background: #ff5700; }
+.share-btn.hackernews { background: #ff6600; }
+.share-btn.linkedin    { background: #4875B4; }
+.share-btn.email { background: #444444; }
+
+.upload{
+  left: 20%;
+}
+
+h6{
+  font-size: 25px;
+  text-shadow: 3px 4px black;
+  color: forestgreen;
+  text-decoration: underline;
+  padding: 0;
+  
+
+}
+input[type="file"] {
+    display: none;
+
+}
+.custom-file-upload {
+    border: 1px solid black;
+    text-shadow: 1px 1px black;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    color: blue;
+    background-color: orangered;
+}
+.uploadbtn{
+  padding-left: 70px;
+  padding-bottom: 80px;
+}
+
+.submithome{
+
+  background-color: mediumpurple;
+  font-family: 'Press Start 2P';
+  padding-left: 8px;
+  padding-bottom: 4px;
+  padding-top: 4px;
+  color: red;
+  text-shadow: 2px 1px black;
+
+
+}
+.main-game{
+  padding-top: 30px;
+
 }

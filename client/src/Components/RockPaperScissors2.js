@@ -10,9 +10,9 @@ class RockPaperScissors extends Component {
       computer: {name: "Computer", selectedOption: "", wins: 0},
       gamesPlayed: 0,
       options: {
-        "rock": ["scissors"],
-        "paper": ["rock"],
-        "scissors": ["paper"]
+        "rock": ["paper"],
+        "paper": ["scissors"],
+        "scissors": ["rock"]
       },
       choices: ["rock", "paper", "scissors"],
       hover: 0,
@@ -149,7 +149,7 @@ class RockPaperScissors extends Component {
         />
         {!this.state.started ? (
           <div className={"startScreen"}>
-            <h5>Rock Paper Scissors</h5>
+            <h5>Rock Paper Scissors 2</h5>
             <br />
             <h5>Press Start!</h5>
           </div>

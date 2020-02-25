@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import RockPaperScissors from  '../components/RockPaperScissors'
+<<<<<<< HEAD
 import Template from '../components/Template'
 
 class RpsContainer extends Component {
@@ -97,6 +98,37 @@ class RpsContainer extends Component {
       startPress={this.handleStartClick}
       />
       <RockPaperScissors/>
+=======
+import CodeBoyTemplate from '../components/CodeBoyTemplate'
+import GameOverScreen from '../components/GameOverScreen'
+
+class RpsContainer extends Component{
+  state = {
+    ejected: false
+  }
+
+  handleEjectClick = () => {
+    this.setState({ejected: true})
+  }
+
+  render = () => {
+    return(
+      <div className = "main-content">
+        {this.state.ejected ? (
+          <div className="gameOverDiv">
+            <div className="cartridge-container">
+              <img src="/assets/cartridge2.png" style={{height: "45vh"}} className="cartridge" alt=""/>
+            </div>
+            <CodeBoyTemplate />
+            <GameOverScreen />
+          </div>
+        ) : (
+          <div className="main-game">
+            <CodeBoyTemplate />
+            <RockPaperScissors eject={this.state.ejected} handleEjectClick={this.handleEjectClick}/>
+          </div>
+        )}
+>>>>>>> 0b1d8bc5dc1a23e64b766b7c1b2a714dfdc73ab8
       </div>
     )
   }
