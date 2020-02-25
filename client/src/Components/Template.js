@@ -72,7 +72,7 @@ return(
       <path
         fill="url(#b)"
         d="M440.4 646.8c0 19-15.4 34.3-34.3 34.3-19 0-34.3-15.4-34.3-34.3 0-19 15.4-34.3 34.3-34.3s34.3 15.3 34.3 34.3z"
-        onClick={props.bButton}
+        onClick={props.aButton}
       ></path>
       <path
         fill="#482A50"

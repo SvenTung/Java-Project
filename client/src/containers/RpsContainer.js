@@ -9,6 +9,7 @@ class RpsContainer extends Component {
     this.state = {
       player: {name: "One", selectedOption: "", wins: 0},
       computer: {name: "Computer", selectedOption: "", wins: 0},
+      gamesPlayed: 0,
       options: {
         "rock": ["scissors"],
         "paper": ["rock"],
@@ -24,35 +25,34 @@ class RpsContainer extends Component {
     this.handleAClick = this.handleAClick.bind(this);
     this.selectComputerOption = this.selectComputerOption.bind(this);
     this.checkGameState = this.checkGameState.bind(this);
-
+    this.resetGame = this.resetGame.bind(this);
   }
 
   handleLeftClick(){
     this.setState({hover: this.state.hover -= 1})
     if (this.state.hover === 3) {
-      this.setState({hover: this.state.hover = 0})
+      this.setState({hover: 0})
     } else if (this.state.hover === -1) {
-      this.setState({hover: this.state.hover = 2})
+      this.setState({hover: 2})
     }
-    console.log(this.state.choices[this.state.hover]);
   }
   handleRightClick(){
     this.setState({hover: this.state.hover += 1})
     if (this.state.hover === 3) {
-      this.setState({hover: this.state.hover = 0})
+      this.setState({hover: 0})
     } else if (this.state.hover === -1) {
-      this.setState({hover: this.state.hover = 2})
+      this.setState({hover: 2})
     }
-    console.log(this.state.choices[this.state.hover]);
   }
   handleAClick(){
-    this.state.player.selectedOption = this.state.choices[this.state.hover];
-    this.checkGameState()
+    if (this.state.gameState === "active") {
+      this.state.player.selectedOption = this.state.choices[this.state.hover];
+      this.checkGameState()
+    } else {
+      this.resetGame()
+    }
   }
 
-  handleBClick(){
-    console.log("B");
-  }
   handleStartClick(){
     console.log("Start");
   }
@@ -64,22 +64,37 @@ class RpsContainer extends Component {
   selectComputerOption(){
     const choice = ["rock", "paper", "scissors"]
     const randomNumber = Math.floor(Math.random() * 3)
-    this.state.computer.selectedOption = (choice[randomNumber])
-    console.log(choice[randomNumber]);
+    const updatedComputer = this.state.computer
+    updatedComputer.selectedOption = (choice[randomNumber])
+    this.setState({computer: updatedComputer})
   }
 
   checkGameState(){
     this.selectComputerOption()
     this.setState({gamesPlayed: this.state.gamesPlayed + 1});
     if (this.state.options[this.state.player.selectedOption].includes(this.state.computer.selectedOption)) {
-      this.state.player.wins += 1;
+      const updatedPlayer = this.state.player
+      updatedPlayer.wins += 1
+      this.setState({player: updatedPlayer})
       this.setState({gameState: 'win'});
     } else if (this.state.options[this.state.computer.selectedOption].includes(this.state.player.selectedOption)) {
-      this.state.computer.wins += 1;
+      const updatedComputer = this.state.computer
+      updatedComputer.wins += 1
+      this.setState({computer: updatedComputer})
       this.setState({gameState: 'lose'});
     } else {
       this.setState({gameState: 'draw'});
     }
+  };
+
+  resetGame(){
+    const updatedPlayer = this.state.player
+    updatedPlayer.selectedOption = ''
+    this.setState({player: updatedPlayer})
+    const updatedComputer = this.state.computer
+    updatedComputer.selectedOption = ''
+    this.setState({computer: updatedComputer})
+    this.setState({gameState: "active"})
   };
 
   handleKeyPress = (event) => {
@@ -89,22 +104,25 @@ class RpsContainer extends Component {
       case 'ArrowLeft':
       case 'ArrowDown':
         this.handleLeftClick()
-        break
+      break
       case 'd':
       case 'w':
       case 'ArrowRight':
       case 'ArrowUp':
         this.handleRightClick()
-        break
+      break
       case '1':
         this.setState({hover: 0})
-        break
+      break
       case '2':
         this.setState({hover: 1})
-        break
+      break
       case '3':
         this.setState({hover: 2})
-        break
+      break
+      case 'Enter':
+        this.handleAClick()
+      break
       default:
       break
     }
@@ -122,13 +140,12 @@ class RpsContainer extends Component {
       </div>
       <Template
       aButton={this.handleAClick}
-      bButton={this.handleBClick}
       leftPress={this.handleLeftClick}
       rightPress={this.handleRightClick}
       ejectPress={this.handleEjectClick}
       startPress={this.handleStartClick}
       />
-      <RockPaperScissors player={this.state.player} computer={this.state.computer} checkGameState={this.checkGameState}/>
+      <RockPaperScissors player={this.state.player} computer={this.state.computer} gamesPlayed={this.state.gamesPlayed} checkGameState={this.checkGameState} gameState={this.state.gameState} resetGame={this.resetGame} hoveredOption={this.state.choices[this.state.hover]}/ >
       <Arrow choices={this.state.choices} hover={this.state.hover}/>
       </div>
     )

@@ -6,48 +6,45 @@ class RockPaperScissors extends Component {
     super(props);
     this.state = {
       player: this.props.player,
-      computer: this.props.computer,
-      gameState: "active",
-      gamesPlayed: 0
+      computer: this.props.computer
     }
   };
 
-  resetGame = () => {
-    this.state.player.selectedOption = ''
-    this.state.computer.selectedOption = ''
-    this.state.gameState = 'active'
-  };
-
   setPlayerOption = (option) => {
-    this.state.player.selectedOption = option
+    const updatedPlayer = this.state.player
+    updatedPlayer.selectedOption = option
+    this.setState({player: updatedPlayer})
     this.props.checkGameState();
   };
 
   render = () => {
     return (
       <div className={"game"}>
-        <h5>Games played: {this.state.gamesPlayed}</h5>
+        <h5>Games played: {this.props.gamesPlayed}</h5>
+        <h5>Player {this.props.player.name} ({this.props.player.wins} wins)</h5>
+        <h5>Computer wins: {this.props.computer.wins}</h5>
           <Player
             playerId={0}
             player={this.state.player}
             setPlayerOption={this.setPlayerOption}
-            gameState={this.state.gameState}
+            gameState={this.props.gameState}
+            hoveredOption={this.props.hoveredOption}
           />
         {this.state.player.selectedOption !== '' ? (
           <div>
             <p>You chose {this.state.player.selectedOption.toUpperCase()}</p>
             <p>Computer chose {this.state.computer.selectedOption.toUpperCase()}</p>
-            {this.state.gameState === 'draw' ? (
+            {this.props.gameState === 'draw' ? (
               <p>Draw!</p>
             ) : (
-              this.state.gameState === 'win' ? (
+              this.props.gameState === 'win' ? (
                 <p>You win!</p>
               ) : (
                 <p>Computer wins!</p>
               )
             )
             }
-            <button className="yol" onClick={() => {this.resetGame()}}>Play Again</button>
+            <button className="resetButton" onClick={() => {this.props.resetGame()}}>Play Again</button>
           </div>
       ) : <></>}
       </div>
