@@ -98,7 +98,6 @@ class RpsContainer extends Component {
   };
 
   handleKeyPress = (event) => {
-    console.log(event);
     switch(event.key){
       case 'a':
       case 's':
