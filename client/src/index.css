@@ -203,6 +203,7 @@ h3{
  text-align:center;
  transition: all 0.2s;
 
+
 }
 .btn-comment:hover{
  background-color:#4095c6;
@@ -289,7 +290,7 @@ input[type="file"] {
   font-size: 15px;
   margin-top: 350px;
   text-shadow: 1px 1px black;
-  
+
 
 
 

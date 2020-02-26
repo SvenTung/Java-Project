@@ -34,11 +34,11 @@ class CommentBox extends Component{
   }
 
   handleNewComment(comment){
-<<<<<<< HEAD
+
     const request = new Request()
     request.post("/api/comments", comment)
     .then(data => this.fetchComments())
-=======
+
     let url = window.location.pathname
     if(url === '/rps2'){
       const request = new Request()
@@ -50,7 +50,7 @@ class CommentBox extends Component{
       request.post("/api/rps", comment)
       .then(data => this.fetchComments())
     }
->>>>>>> 2cdb6dd3f0fd67d53bbdb9ae4d071aba15b11c3c
+
   }
 
   handleToggleComment(){
