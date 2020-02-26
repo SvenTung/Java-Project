@@ -3,7 +3,6 @@ import CommentList from '../components/CommentList'
 import CommentForm from './CommentForm'
 import Request from '../helpers/request'
 
-
 class CommentBox extends Component{
   constructor(props){
     super(props)
@@ -27,36 +26,26 @@ class CommentBox extends Component{
   }
 
   handleNewComment(comment){
-      const request = new Request()
-      request.post("/api/comments", comment)
-      .then(data => this.fetchComments())
+    const request = new Request()
+    request.post("/api/comments", comment)
+    .then(data => this.fetchComments())
   }
 
   handleToggleComment(){
-      this.setState(state => ({
-        newCommentForm: !state.newCommentForm
-      }))
+    this.setState(state => ({
+      newCommentForm: !state.newCommentForm
+    }))
   }
 
-
-
-render(){
-  
-  return(
-    <div className="comment-box">
-      <h4>Report a bug <br/> Discuss your score</h4>
-      <CommentList data={this.state.data}/>
-
-      <button className="btn-comment" onClick={this.handleToggleComment}> Comment </button>
-
-      <CommentForm newCommentToggle={this.state.newCommentForm} onPost={this.handleNewComment} fetchComments={this.fetchComments}/>
-
-    </div>
-  )
-}
-
-
-
-
+  render(){
+    return(
+      <div className="comment-box">
+        <h4>Report a bug <br/> Discuss your score</h4>
+        <CommentList data={this.state.data}/>
+        <button className="btn-comment" onClick={this.handleToggleComment}> Comment </button>
+        <CommentForm newCommentToggle={this.state.newCommentForm} onPost={this.handleNewComment} fetchComments={this.fetchComments}/>
+      </div>
+    )
+  }
 }
 export default CommentBox

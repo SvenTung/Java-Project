@@ -4,7 +4,6 @@ import WelcomeContainer from './WelcomeContainer';
 import RpsContainer from './RpsContainer';
 import Rps2Container from './Rps2Container';
 
-
 const GameContainer = () => {
   return (
     <Router>
