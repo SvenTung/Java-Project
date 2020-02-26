@@ -39,23 +39,16 @@ class CommentBox extends Component{
   }
 
 
-render(){
-  return(
-    <div className="comment-box">
-      <h1>Report a bug! <br/>
-      Discuss your score!</h1>
-      <CommentList data={this.state.data}/>
-
-      <button className="btn-comment" onClick={this.handleToggleComment}> Submit a comment </button>
-
-      <CommentForm newCommentToggle={this.state.newCommentForm} onPost={this.handleNewComment} fetchComments={this.fetchComments}/>
-
-    </div>
-  )
+  render(){
+    return(
+      <div className="comment-box">
+        <h1>Report a bug! <br/>
+        Discuss your score!</h1>
+        <CommentList data={this.state.data}/>
+        <button className="btn-comment" onClick={this.handleToggleComment}> Submit a comment </button>
+        <CommentForm newCommentToggle={this.state.newCommentForm} onPost={this.handleNewComment} fetchComments={this.fetchComments}/>
+      </div>
+    )
+  }
 }
-
-
-}
-
-
 export default CommentBox
