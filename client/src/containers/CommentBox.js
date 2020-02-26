@@ -44,11 +44,10 @@ render(){
   const isNewComment = this.state.newComment;
   return(
     <div className="comment-box">
-      <h1>Report a bug! <br/>
-      Discuss your score!</h1>
+      <h4>Report a bug <br/> Discuss your score</h4>
       <CommentList data={this.state.data}/>
 
-      <button className="btn-comment" onClick={this.handleToggleComment}> Submit a comment </button>
+      <button className="btn-comment" onClick={this.handleToggleComment}> Comment </button>
 
       <CommentForm newCommentToggle={this.state.newCommentForm} onPost={this.handleNewComment} fetchComments={this.fetchComments}/>
 

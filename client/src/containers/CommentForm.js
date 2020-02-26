@@ -50,13 +50,16 @@ render(){
           //if we put brackets in it would execute once and straight away
           onChange={this.handleAuthorChange}
         />
-        <label>Body:</label>
+        <br/>
+        <label>Body:  </label>
         <input
           type="text"
           placeholder="Say something..."
           value={this.state.body}
           onChange={this.handleBodyChange}
         />
+        <br/>
+        <br/>
         <button type="submit">Submit</button>
       </form>
   )
