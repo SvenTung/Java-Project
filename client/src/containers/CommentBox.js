@@ -40,7 +40,6 @@ class CommentBox extends Component{
 
 
 render(){
-  const isNewComment = this.state.newComment;
   return(
     <div className="comment-box">
       <h1>Report a bug! <br/>
