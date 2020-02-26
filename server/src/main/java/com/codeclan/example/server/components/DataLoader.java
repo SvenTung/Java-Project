@@ -22,9 +22,18 @@ public class DataLoader implements ApplicationRunner{
     public void run(ApplicationArguments args){
 
         Comment comment = new Comment (
-                "Yer da", "Hullo there!"
+                "Yer da", "Ah sell the avon"
         );
         commentRepository.save(comment);
+
+        Comment comment2 = new Comment(
+                "shrek", "aww hullo there!"
+        );
+        commentRepository.save(comment2);
+        Comment comment3 = new Comment(
+                "yer maw", "yer da sells avon"
+        );
+        commentRepository.save(comment3);
     }
 
 }
