@@ -5,7 +5,6 @@ import Request from '../helpers/request'
 
 
 class CommentBox extends Component{
-
   constructor(props){
     super(props)
     this.state = {

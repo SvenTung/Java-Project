@@ -41,24 +41,24 @@ render(){
   }
   return(
     <form className="comment-form" onSubmit={this.handleSubmit}>
-        <label >Author: </label>
-        <input
-          type="text"
-          placeholder="Your name"
-          value={this.state.author}
-          //because this is a callback, we're not putting brackets in
-          //if we put brackets in it would execute once and straight away
-          onChange={this.handleAuthorChange}
-        />
-        <label>Body:</label>
-        <input
-          type="text"
-          placeholder="Say something..."
-          value={this.state.body}
-          onChange={this.handleBodyChange}
-        />
-        <button type="submit">Submit</button>
-      </form>
+      <label >Author: </label>
+      <input
+        type="text"
+        placeholder="Your name"
+        value={this.state.author}
+        //because this is a callback, we're not putting brackets in
+        //if we put brackets in it would execute once and straight away
+        onChange={this.handleAuthorChange}
+      />
+      <label>Body:</label>
+      <input
+        type="text"
+        placeholder="Say something..."
+        value={this.state.body}
+        onChange={this.handleBodyChange}
+      />
+      <button type="submit">Submit</button>
+    </form>
   )
 }
 

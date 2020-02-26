@@ -13,15 +13,9 @@ class RpsContainer extends Component{
     this.setState({ejected: true})
   }
 
-
-
-
   render = () => {
     return(
       <div className = "main-content">
-      <div>
-
-      </div>
         {this.state.ejected ? (
           <div className="gameOverDiv">
             <div className="cartridge-container">
@@ -29,15 +23,12 @@ class RpsContainer extends Component{
             </div>
             <CodeBoyTemplate />
             <GameOverScreen />
-
           </div>
         ) : (
           <div className="main-game">
             <CodeBoyTemplate />
             <RockPaperScissors eject={this.state.ejected} handleEjectClick={this.handleEjectClick}/>
-
           </div>
-
         )}
         <CommentBox/>
       </div>
