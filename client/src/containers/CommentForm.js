@@ -22,16 +22,17 @@ handleBodyChange(event){
 }
 
 handleSubmit(event){
-  // event.preventDefault();
+  event.preventDefault();
   const newComment =
   {
     author: this.state.author,
     body: this.state.body
   }
 
-
   this.props.onPost(newComment)
+
   this.setState({author: "", body: ""})
+
 }
 
 render(){
@@ -40,6 +41,7 @@ render(){
   }
   return(
     <form className="comment-form" onSubmit={this.handleSubmit}>
+        <label >Author: </label>
         <input
           type="text"
           placeholder="Your name"
@@ -48,6 +50,7 @@ render(){
           //if we put brackets in it would execute once and straight away
           onChange={this.handleAuthorChange}
         />
+        <label>Body:</label>
         <input
           type="text"
           placeholder="Say something..."

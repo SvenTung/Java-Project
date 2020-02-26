@@ -17,7 +17,10 @@ class CommentBox extends Component{
   }
 
   componentDidMount(){
+    this.fetchComments();
+  }
 
+  fetchComments = () => {
     const request = new Request();
     request.get('/api/comments')
     .then(commentData => this.setState({data: commentData}))
@@ -27,7 +30,7 @@ class CommentBox extends Component{
   handleNewComment(comment){
       const request = new Request()
       request.post("/api/comments", comment)
-
+      .then(data => this.fetchComments())
   }
 
   handleToggleComment(){
@@ -47,7 +50,7 @@ render(){
 
       <button className="btn-comment" onClick={this.handleToggleComment}> Submit a comment </button>
 
-      <CommentForm newCommentToggle={this.state.newCommentForm} onPost={this.handleNewComment}/>
+      <CommentForm newCommentToggle={this.state.newCommentForm} onPost={this.handleNewComment} fetchComments={this.fetchComments}/>
 
     </div>
   )
