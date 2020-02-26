@@ -5,7 +5,6 @@ import Request from '../helpers/request'
 
 
 class CommentBox extends Component{
-
   constructor(props){
     super(props)
     this.state = {
@@ -56,15 +55,15 @@ class CommentBox extends Component{
   }
 
 
+
 render(){
-  const isNewComment = this.state.newComment;
+  
   return(
     <div className="comment-box">
-      <h1>Report a bug! <br/>
-      Discuss your score!</h1>
+      <h4>Report a bug <br/> Discuss your score</h4>
       <CommentList data={this.state.data}/>
 
-      <button className="btn-comment" onClick={this.handleToggleComment}> Submit a comment </button>
+      <button className="btn-comment" onClick={this.handleToggleComment}> Comment </button>
 
       <CommentForm newCommentToggle={this.state.newCommentForm} onPost={this.handleNewComment} fetchComments={this.fetchComments}/>
 
@@ -73,7 +72,7 @@ render(){
 }
 
 
+
+
 }
-
-
 export default CommentBox

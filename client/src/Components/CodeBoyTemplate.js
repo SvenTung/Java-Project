@@ -3,9 +3,7 @@ import React from 'react'
 const Template = (props) => {
 
 return(
-
-<div className="gameboy">
-
+  <div className="gameboy">
     <svg
       xmlns="http://www.w3.org/2000/svg"
       x="0"
@@ -73,8 +71,6 @@ return(
         d="M538.3 606.4c0 19-15.4 34.3-34.3 34.3-19 0-34.3-15.4-34.3-34.3S485 572 504 572c18.9 0 34.3 15.4 34.3 34.4z"
         onClick={props.aButton}
       ></path>
-
-
 
       <path
         fill="#555753"
@@ -309,6 +305,4 @@ return(
     </div>
   )
 }
-
-
 export default Template
