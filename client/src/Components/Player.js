@@ -1,6 +1,7 @@
 import React from 'react';
 import Option from "./Option";
 
+
 const Player = (props) => {
   return (
     <div className={"player"}>

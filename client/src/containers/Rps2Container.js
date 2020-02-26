@@ -18,7 +18,7 @@ class RpsContainer extends Component{
         {this.state.ejected ? (
           <div className="gameOverDiv">
             <div className="cartridge-container">
-              <img src="/assets/cartridge2.png" style={{height: "45vh"}} className="cartridge" alt=""/>
+              <img src="/assets/cartridge2.0.png" style={{height: "45vh"}} className="cartridge" alt=""/>
             </div>
             <CodeBoyTemplate />
             <GameOverScreen />
