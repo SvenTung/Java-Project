@@ -1,8 +1,8 @@
 import React, {Component}from 'react';
-import Player from "./Player";
+import Player2 from "./Player2";
 import ActionButtons from '../components/ActionButtons'
 
-class RockPaperScissors extends Component {
+class RockPaperScissors2 extends Component {
   constructor(props){
     super(props);
     this.state = {
@@ -10,11 +10,11 @@ class RockPaperScissors extends Component {
       computer: {name: "Computer", selectedOption: "", wins: 0},
       gamesPlayed: 0,
       options: {
-        "rock": ["paper"],
-        "paper": ["scissors"],
-        "scissors": ["rock"]
+        "softrock": ["toiletpaper"],
+        "toiletpaper": ["bluntscissors"],
+        "bluntscissors": ["softrock"]
       },
-      choices: ["rock", "paper", "scissors"],
+      choices: ["softrock", "toiletpaper", "bluntscissors"],
       hover: 0,
       started: false
     }
@@ -56,7 +56,7 @@ class RockPaperScissors extends Component {
   };
 
   selectComputerOption = () => {
-    const choice = ["rock", "paper", "scissors"]
+    const choice = ["softrock", "toiletpaper", "bluntscissors"]
     const randomNumber = Math.floor(Math.random() * 3)
     const updatedComputer = this.state.computer
     updatedComputer.selectedOption = (choice[randomNumber])
@@ -155,10 +155,10 @@ class RockPaperScissors extends Component {
           </div>
         ) : (
           <div className={"game"}>
-            <h5>Games played: {this.state.gamesPlayed}</h5>
-            <h5>Player {this.state.player.name} ({this.state.player.wins} wins)</h5>
-            <h5>Computer wins: {this.state.computer.wins}</h5>
-            <Player
+            <h5>Games Played {this.state.gamesPlayed}</h5>
+            <h5>Player{this.state.player.name} {this.state.player.wins} wins</h5>
+            <h5>Computer {this.state.computer.wins} wins</h5>
+            <Player2
               playerId={0}
               player={this.state.player}
               setPlayerOption={this.setPlayerOption}
@@ -189,4 +189,4 @@ class RockPaperScissors extends Component {
   }
 };
 
-export default RockPaperScissors;
+export default RockPaperScissors2;

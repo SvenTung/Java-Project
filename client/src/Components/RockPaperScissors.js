@@ -155,9 +155,9 @@ class RockPaperScissors extends Component {
           </div>
         ) : (
           <div className={"game"}>
-            <h5>Games played: {this.state.gamesPlayed}</h5>
-            <h5>Player {this.state.player.name} ({this.state.player.wins} wins)</h5>
-            <h5>Computer wins: {this.state.computer.wins}</h5>
+            <h5>Games played {this.state.gamesPlayed}</h5>
+            <h5>Player{this.state.player.name} {this.state.player.wins} wins</h5>
+            <h5>Computer {this.state.computer.wins} wins</h5>
             <Player
               playerId={0}
               player={this.state.player}
