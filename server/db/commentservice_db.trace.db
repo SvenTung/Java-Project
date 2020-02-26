@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 2020-02-26 11:23:02 database: flush
 org.h2.message.DbException: General error: "java.lang.IllegalStateException: The file is locked: nio:/Users/user/codeclan_work/Java-Project/server/db/commentservice_db.mv.db [1.4.200/7]" [50000-200]
+=======
+2020-02-26 11:18:14 database: flush
+org.h2.message.DbException: General error: "java.lang.IllegalStateException: The file is locked: nio:/Users/chad/codeclan_work/week_15/sgsboy/server/db/commentservice_db.mv.db [1.4.200/7]" [50000-200]
+>>>>>>> 736acbe7a8b555b8b94520d5c38fc7c4390adfc2
 	at org.h2.message.DbException.get(DbException.java:194)
 	at org.h2.message.DbException.convert(DbException.java:347)
 	at org.h2.mvstore.db.MVTableEngine$1.uncaughtException(MVTableEngine.java:93)
@@ -33,11 +38,19 @@ org.h2.message.DbException: General error: "java.lang.IllegalStateException: The
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 	at java.lang.Thread.run(Thread.java:748)
+<<<<<<< HEAD
 Caused by: org.h2.jdbc.JdbcSQLNonTransientException: General error: "java.lang.IllegalStateException: The file is locked: nio:/Users/user/codeclan_work/Java-Project/server/db/commentservice_db.mv.db [1.4.200/7]" [50000-200]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:505)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
 	... 33 more
 Caused by: java.lang.IllegalStateException: The file is locked: nio:/Users/user/codeclan_work/Java-Project/server/db/commentservice_db.mv.db [1.4.200/7]
+=======
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: General error: "java.lang.IllegalStateException: The file is locked: nio:/Users/chad/codeclan_work/week_15/sgsboy/server/db/commentservice_db.mv.db [1.4.200/7]" [50000-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:505)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	... 33 more
+Caused by: java.lang.IllegalStateException: The file is locked: nio:/Users/chad/codeclan_work/week_15/sgsboy/server/db/commentservice_db.mv.db [1.4.200/7]
+>>>>>>> 736acbe7a8b555b8b94520d5c38fc7c4390adfc2
 	at org.h2.mvstore.DataUtils.newIllegalStateException(DataUtils.java:950)
 	at org.h2.mvstore.FileStore.open(FileStore.java:166)
 	at org.h2.mvstore.MVStore.<init>(MVStore.java:381)
@@ -45,7 +58,11 @@ Caused by: java.lang.IllegalStateException: The file is locked: nio:/Users/user/
 Caused by: java.nio.channels.OverlappingFileLockException
 	at sun.nio.ch.SharedFileLockTable.checkList(FileLockTable.java:255)
 	at sun.nio.ch.SharedFileLockTable.add(FileLockTable.java:152)
+<<<<<<< HEAD
 	at sun.nio.ch.FileChannelImpl.tryLock(FileChannelImpl.java:1107)
+=======
+	at sun.nio.ch.FileChannelImpl.tryLock(FileChannelImpl.java:1108)
+>>>>>>> 736acbe7a8b555b8b94520d5c38fc7c4390adfc2
 	at org.h2.store.fs.FileNio.tryLock(FilePathNio.java:121)
 	at java.nio.channels.FileChannel.tryLock(FileChannel.java:1155)
 	at org.h2.mvstore.FileStore.open(FileStore.java:163)
