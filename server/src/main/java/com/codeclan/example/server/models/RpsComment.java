@@ -5,7 +5,7 @@ import java.io.Serializable;
 
 @Entity
 @Table
-public class Comment implements Serializable {
+public class RpsComment implements Serializable {
 
     @Column
     private String author;
@@ -17,12 +17,12 @@ public class Comment implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    public Comment(String author, String body){
+    public RpsComment(String author, String body){
         this.author = author;
         this.body = body;
     }
 
-    public Comment() {
+    public RpsComment() {
 
     }
 

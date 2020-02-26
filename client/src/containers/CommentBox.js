@@ -20,15 +20,37 @@ class CommentBox extends Component{
 
   fetchComments = () => {
     const request = new Request();
-    request.get('/api/comments')
+    let url = window.location.pathname;
+    if(url === '/rps2'){
+    request.get('/api/rps2')
     .then(commentData => this.setState({data: commentData}))
     .catch(err => console.error)
   }
+  else if(url === '/rps'){
+    request.get('/api/rps')
+    .then(commentData => this.setState({data: commentData}))
+    .catch(err => console.error)
+  }
+  }
 
   handleNewComment(comment){
+<<<<<<< HEAD
     const request = new Request()
     request.post("/api/comments", comment)
     .then(data => this.fetchComments())
+=======
+    let url = window.location.pathname
+    if(url === '/rps2'){
+      const request = new Request()
+      request.post("/api/rps2", comment)
+      .then(data => this.fetchComments())
+    }
+    else if (url === '/rps'){
+      const request = new Request()
+      request.post("/api/rps", comment)
+      .then(data => this.fetchComments())
+    }
+>>>>>>> 2cdb6dd3f0fd67d53bbdb9ae4d071aba15b11c3c
   }
 
   handleToggleComment(){

@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import RockPaperScissors2 from  '../components/RockPaperScissors2'
 import CodeBoyTemplate from '../components/CodeBoyTemplate'
 import GameOverScreen from '../components/GameOverScreen'
+import CommentBox from './CommentBox'
+
 
 class RpsContainer extends Component{
   state = {
@@ -29,6 +31,7 @@ class RpsContainer extends Component{
             <RockPaperScissors2 eject={this.state.ejected} handleEjectClick={this.handleEjectClick}/>
           </div>
         )}
+        <CommentBox/>
       </div>
     )
   }

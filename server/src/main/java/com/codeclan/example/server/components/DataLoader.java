@@ -1,8 +1,9 @@
 package com.codeclan.example.server.components;
 
-import com.apple.eawt.Application;
-import com.codeclan.example.server.models.Comment;
-import com.codeclan.example.server.respoitories.CommentRepository;
+import com.codeclan.example.server.models.Rps2Comment;
+import com.codeclan.example.server.models.RpsComment;
+import com.codeclan.example.server.repositories.Rps2Repository;
+import com.codeclan.example.server.repositories.RpsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
@@ -13,7 +14,10 @@ import org.springframework.stereotype.Component;
 public class DataLoader implements ApplicationRunner{
 
     @Autowired
-    CommentRepository commentRepository;
+    RpsRepository rpsRepository;
+
+    @Autowired
+    Rps2Repository rps2Repository;
 
     public DataLoader(){
 
@@ -21,19 +25,25 @@ public class DataLoader implements ApplicationRunner{
 
     public void run(ApplicationArguments args){
 
-        Comment comment = new Comment (
+        RpsComment rpsComment = new RpsComment(
                 "Yer da", "Ah sell the avon"
         );
-        commentRepository.save(comment);
+        rpsRepository.save(rpsComment);
 
-        Comment comment2 = new Comment(
-                "shrek", "aww hullo there!"
+        RpsComment rpsComment2 = new RpsComment(
+                "shrek", "get outta ma swamp!"
         );
-        commentRepository.save(comment2);
-        Comment comment3 = new Comment(
+        rpsRepository.save(rpsComment2);
+        RpsComment rpsComment3 = new RpsComment(
                 "yer maw", "yer da sells avon"
         );
-        commentRepository.save(comment3);
+        rpsRepository.save(rpsComment3);
+
+        Rps2Comment rps2Comment = new Rps2Comment(
+                "Comment Daddy", "Comments are king"
+        );
+        rps2Repository.save(rps2Comment);
+
     }
 
 }
