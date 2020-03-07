@@ -7,7 +7,7 @@ import Scissors from './images/Scissors'
 const Option = (props) => {
   return (
     //replace this code with our own option images
-    <div style={{width: "5vw"}}>
+    <div className="option" style={{width: "5vw"}}>
       {props.option === 'rock' ? (
         <Rock/>
       ) : (

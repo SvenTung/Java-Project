@@ -1,317 +1,938 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-  sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: darkgray;
-  background-image:url('/assets/1094283.jpg');
-  background-repeat:space;
-  background-size: cover;
-  position: relative;
-}
-
-h5{
-  margin-bottom: 10px;
-  margin-top: -4px;
-  font-size: 11px;
-}
-
-h2{
-  font-size: 26px;
-  color: mediumpurple;
-  padding-bottom: 30px;
-  text-shadow: 2px 2px black;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-  monospace;
-}
-
-
-.game, .startScreen, .gameOverScreen{
-  position: absolute;
-  top: 195px; left: 44.5%;
-  width: 300px;
-  font-family: 'Press Start 2P';
-}
-
-.game{
-  top: 130px;
-}
-
-.gameOverScreen{
-  top: 282px;
-}
-
-.gameboy{
-  height: 0;
-  padding-bottom: 25%;
-  position: absolute;
-  left: 40%;
-  z-index: -1;
-}
-
-.action-buttons{
-  position: absolute;
-  left: 40%;
-}
-
-.player{
-  display: inline-block;
-  text-align: center;
-  align-items: flex-start;
-}
-
-p{
-  margin-top: 5px;
-  margin-bottom: 9px;
-  font-size: 11px;
-}
-
-.content{
-  padding-top: 0px;
-  font-size: 35px;
-  text: white;
-  font-family: 'Press Start 2P';
-  padding-bottom: 50px;
-}
-
-a{
-  text-decoration:none;
-  color:white;
-  padding-left: 50px;
-}
-
-label{
-  font-size: 15px;
-}
-
-.cartridge{
-  animation: slide-top 3s ease 0s 1 normal forwards;
-}
-
-.cartridge-container{
-  z-index: -1;
-  position: absolute;
-  margin-top: 0px;
-  padding-top: 3px;
-  left:45%;
-}
-
-#template{
-  z-index: auto;
-}
-
-@-webkit-keyframes slide-top{0%{-webkit-transform:translateY(0);transform:translateY(0)}100%{-webkit-transform:translateY(-100px);transform:translateY(-100px)}}@keyframes slide-top{0%{-webkit-transform:translateY(0);transform:translateY(0)}100%{-webkit-transform:translateY(-100px);transform:translateY(-100px)}}
-
-
-
-
-button:hover{
-  border: solid black 1px;
-  background-color: red;
-}
-button{
-  background-color: limegreen;
-  cursor: pointer;
-}
-
-
-
-.resetButton{
-  background: burlywood;
-  font-family: 'Press Start 2P';
-}
-
-form {
-  padding-bottom: 30px;
-  padding-left:5%;
-  color: greenyellow;
-  text-shadow: 3px 3px black;
-}
-
-h3{
-  color: deeppink;
-  padding: 10px;
-  text-decoration: underline;
-  text-decoration-style: dotted;
-  text-shadow: 3px 3px black;
-}
-
-.hoveredOption{
-  border: solid black 1px;
-  background-color: red;
-}
-
-.gameOverDiv{
-  padding-top: 100px;
-}
-
-.share-btns {
-  padding-top: 5rem;
-  padding-bottom: 1rem;
-  display: flex;
-  align-items:center;
-  justify-content: center;
-}
-
-.share-btn {
-  display: inline-block;
-  color: #ffffff;
-  border: none;
-  padding: 0.1em 0.6em;
-  outline: none;
-  text-align: center;
-  font-size: 0.4em;
-  margin: 0 0.2em;
-}
-
-.share-btn:focus,
-.share-btn:hover {
-  text-decoration: none;
-  opacity: 0.8;
-}
-
-.share-btn:active {
-  color: #e2e2e2;
-}
-
-.share-btn.twitter { background: #55acee; }
-.share-btn.google-plus { background: #dd4b39; }
-.share-btn.facebook { background: #3B5998; }
-.share-btn.stumbleupon { background: #EB4823; }
-.share-btn.reddit { background: #ff5700; }
-.share-btn.hackernews { background: #ff6600; }
-.share-btn.linkedin    { background: #4875B4; }
-.share-btn.email { background: #444444; }
-
-.btn-comment{
-
- display: inline-block ;
- padding:0.3em 1.2em;
- margin:0 0.3em 0.3em 0;
- border-radius:5em;
- box-sizing: border-box;
- text-decoration:none;
- font-family:'Roboto',sans-serif;
- font-weight:300;
- color:#FFFFFF;
- background-color:#4eb5f1 ;
- text-align:center;
- transition: all 0.2s;
-
-
-}
-.btn-comment:hover{
- background-color:#4095c6;
-}
-
-.upload{
-  left: 20%;
-}
-
-h6{
-  font-size: 25px;
-  text-shadow: 3px 4px black;
-  color: forestgreen;
-  text-decoration: underline;
   padding: 0;
-
-
-}
-input[type="file"] {
-  display: none;
-
-}
-.custom-file-upload {
-  border: 1px solid black;
-  text-shadow: 1px 1px black;
-  display: inline-block;
-  padding: 6px 12px;
-  cursor: pointer;
-  color: blue;
-  background-color: orangered;
-}
-.uploadbtn{
-  padding-left: 70px;
-  padding-bottom: 80px;
+  box-sizing: border-box;
 }
 
-.submithome{
+/* Mobile Styles */
+@media only screen and (max-width: 400px) {
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: darkgray;
+    background-image:url('/assets/1094283.jpg');
+    background-repeat:space;
+    background-size: cover;
+    position: relative;
+  }
 
-  background-color: mediumpurple;
-  font-family: 'Press Start 2P';
-  padding-left: 8px;
-  padding-bottom: 4px;
-  padding-top: 4px;
-  color: red;
-  text-shadow: 2px 1px black;
+  h5{
+    margin-bottom: 10px;
+    margin-top: -4px;
+    font-size: 11px;
+  }
+
+  h2{
+    font-size: 26px;
+    color: mediumpurple;
+    padding-bottom: 30px;
+    text-shadow: 2px 2px black;
+  }
+
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+  }
 
 
+  .game, .startScreen, .gameOverScreen{
+    position: absolute;
+    top: 195px; left: 62.5%;
+    width: 300px;
+    font-family: 'Press Start 2P';
+  }
+
+  .game{
+    top: 15%;
+  }
+
+  .gameOverScreen{
+    top: 282px;
+  }
+
+  .gameboy{
+    height: 0;
+    padding-bottom: 25%;
+    position: absolute;
+    left: 40%;
+    z-index: -1;
+  }
+
+  .action-buttons{
+    position: absolute;
+    left: 40%;
+  }
+
+  .player{
+    display: inline-block;
+    text-align: center;
+    align-items: flex-start;
+  }
+
+  .playerOption{
+    width: 7vh;
+    height: 7vh;
+  }
+
+  .option{
+    margin: 1.5vh;
+  }
+
+  .hoveredOption{
+    width: 7vh;
+    height: 7vh;
+  }
+
+  p{
+    margin-top: 5px;
+    margin-bottom: 9px;
+    font-size: 11px;
+  }
+
+  .content{
+    padding-top: 0px;
+    font-size: 35px;
+    text: white;
+    font-family: 'Press Start 2P';
+    padding-bottom: 50px;
+  }
+
+  a{
+    text-decoration:none;
+    color:white;
+    padding-left: 50px;
+  }
+
+  label{
+    font-size: 15px;
+  }
+
+  .cartridge{
+    animation: slide-top 3s ease 0s 1 normal forwards;
+  }
+
+  .cartridge-container{
+    z-index: -1;
+    position: absolute;
+    margin-top: 0px;
+    padding-top: 3px;
+    left:60%;
+  }
+
+  #template{
+    z-index: auto;
+    width: 200%;
+    padding-left: 8%;
+  }
+
+  @-webkit-keyframes slide-top{0%{-webkit-transform:translateY(0);transform:translateY(0)}100%{-webkit-transform:translateY(-100px);transform:translateY(-100px)}}@keyframes slide-top{0%{-webkit-transform:translateY(0);transform:translateY(0)}100%{-webkit-transform:translateY(-100px);transform:translateY(-100px)}}
+
+
+
+
+  button:hover{
+    border: solid black 1px;
+    background-color: red;
+  }
+  button{
+    background-color: limegreen;
+    cursor: pointer;
+  }
+
+
+
+  .resetButton{
+    background: burlywood;
+    font-family: 'Press Start 2P';
+  }
+
+  form {
+    padding-bottom: 30px;
+    padding-left:5%;
+    color: greenyellow;
+    text-shadow: 3px 3px black;
+  }
+
+  h3{
+    color: deeppink;
+    padding: 10px;
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    text-shadow: 3px 3px black;
+  }
+
+  .hoveredOption{
+    border: solid black 1px;
+    background-color: red;
+  }
+
+  .gameOverDiv{
+    padding-top: 100px;
+  }
+
+  .share-btns {
+    padding-top: 5rem;
+    padding-bottom: 1rem;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+  }
+
+  .share-btn {
+    display: inline-block;
+    color: #ffffff;
+    border: none;
+    padding: 0.1em 0.6em;
+    outline: none;
+    text-align: center;
+    font-size: 0.4em;
+    margin: 0 0.2em;
+  }
+
+  .share-btn:focus,
+  .share-btn:hover {
+    text-decoration: none;
+    opacity: 0.8;
+  }
+
+  .share-btn:active {
+    color: #e2e2e2;
+  }
+
+  .share-btn.twitter { background: #55acee; }
+  .share-btn.google-plus { background: #dd4b39; }
+  .share-btn.facebook { background: #3B5998; }
+  .share-btn.stumbleupon { background: #EB4823; }
+  .share-btn.reddit { background: #ff5700; }
+  .share-btn.hackernews { background: #ff6600; }
+  .share-btn.linkedin    { background: #4875B4; }
+  .share-btn.email { background: #444444; }
+
+  .btn-comment{
+
+    display: inline-block ;
+    padding:0.3em 1.2em;
+    margin:0 0.3em 0.3em 0;
+    border-radius:25em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'Roboto',sans-serif;
+    font-weight:300;
+    color:#FFFFFF;
+    background-color:#4eb5f1 ;
+    text-align:center;
+    transition: all 0.2s;
+  }
+
+
+  .btn-comment:hover{
+    background-color:#4095c6;
+  }
+
+
+  .upload{
+    left: 20%;
+  }
+
+  h6{
+    font-size: 25px;
+    text-shadow: 3px 4px black;
+    color: forestgreen;
+    text-decoration: underline;
+    padding: 0;
+
+
+  }
+  input[type="file"] {
+    display: none;
+
+  }
+  .custom-file-upload {
+    border: 1px solid black;
+    text-shadow: 1px 1px black;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    color: blue;
+    background-color: orangered;
+  }
+  .uploadbtn{
+    padding-left: 70px;
+    padding-bottom: 80px;
+  }
+
+  .submithome{
+
+    background-color: mediumpurple;
+    font-family: 'Press Start 2P';
+    padding-left: 8px;
+    padding-bottom: 4px;
+    padding-top: 4px;
+    color: red;
+    text-shadow: 2px 1px black;
+
+
+  }
+  .main-game{
+    padding-top: 30px;
+
+  }
+
+
+  .author{
+    font-size: 26px;
+    color: black;
+    font-weight: bold;
+    text-shadow: 1px 1px black;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    text-decoration: underline;
+
+    display: block;
+
+  }
+
+  .comment-body{
+    font-style: italic;
+    color: black;
+
+
+
+
+  }
+
+  .comment-box{
+    width: 300px;
+    flex-flow: column;
+    align-items: flex-end;
+    width: 100%;
+    background-color: white;
+    margin-left: 52%;
+    border-radius: 20px;
+    height: 300px;
+    overflow-y: scroll;
+    font-size: 23px;
+    margin-top: 201%;
+    text-shadow:
+  }
+
+  .comment-form{
+    padding: 30px;
+    margin-bottom: 30px;
+    text-shadow: 0px 1px black;
+    color: black;
+  }
 }
-.main-game{
-  padding-top: 30px;
 
+/* Tablet Styles */
+@media only screen and (min-width: 401px) and (max-width: 960px) {
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: darkgray;
+    background-image:url('/assets/1094283.jpg');
+    background-repeat:space;
+    background-size: cover;
+    position: relative;
+  }
+
+  h5{
+    margin-bottom: 10px;
+    margin-top: -4px;
+    font-size: 11px;
+  }
+
+  h2{
+    font-size: 26px;
+    color: mediumpurple;
+    padding-bottom: 30px;
+    text-shadow: 2px 2px black;
+  }
+
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+  }
+
+
+  .game, .startScreen, .gameOverScreen{
+    position: absolute;
+    top: 195px; left: 62.5%;
+    width: 300px;
+    font-family: 'Press Start 2P';
+  }
+
+  .game{
+    top: 15%;
+  }
+
+  .gameOverScreen{
+    top: 282px;
+  }
+
+  .gameboy{
+    height: 0;
+    padding-bottom: 25%;
+    position: absolute;
+    left: 40%;
+    z-index: -1;
+  }
+
+  .action-buttons{
+    position: absolute;
+    left: 40%;
+  }
+
+  .player{
+    display: inline-block;
+    text-align: center;
+    align-items: flex-start;
+  }
+
+  .playerOption{
+    width: 7vh;
+    height: 7vh;
+  }
+
+  .option{
+    margin: 1.5vh;
+  }
+
+  .hoveredOption{
+    width: 7vh;
+    height: 7vh;
+  }
+
+  p{
+    margin-top: 5px;
+    margin-bottom: 9px;
+    font-size: 11px;
+  }
+
+  .content{
+    padding-top: 0px;
+    font-size: 35px;
+    text: white;
+    font-family: 'Press Start 2P';
+    padding-bottom: 50px;
+  }
+
+  a{
+    text-decoration:none;
+    color:white;
+    padding-left: 50px;
+  }
+
+  label{
+    font-size: 15px;
+  }
+
+  .cartridge{
+    animation: slide-top 3s ease 0s 1 normal forwards;
+  }
+
+  .cartridge-container{
+    z-index: -1;
+    position: absolute;
+    margin-top: 0px;
+    padding-top: 3px;
+    left:60%;
+  }
+
+  #template{
+    z-index: auto;
+    width: 200%;
+    padding-left: 8%;
+  }
+
+  @-webkit-keyframes slide-top{0%{-webkit-transform:translateY(0);transform:translateY(0)}100%{-webkit-transform:translateY(-100px);transform:translateY(-100px)}}@keyframes slide-top{0%{-webkit-transform:translateY(0);transform:translateY(0)}100%{-webkit-transform:translateY(-100px);transform:translateY(-100px)}}
+
+
+
+
+  button:hover{
+    border: solid black 1px;
+    background-color: red;
+  }
+  button{
+    background-color: limegreen;
+    cursor: pointer;
+  }
+
+
+
+  .resetButton{
+    background: burlywood;
+    font-family: 'Press Start 2P';
+  }
+
+  form {
+    padding-bottom: 30px;
+    padding-left:5%;
+    color: greenyellow;
+    text-shadow: 3px 3px black;
+  }
+
+  h3{
+    color: deeppink;
+    padding: 10px;
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    text-shadow: 3px 3px black;
+  }
+
+  .hoveredOption{
+    border: solid black 1px;
+    background-color: red;
+  }
+
+  .gameOverDiv{
+    padding-top: 100px;
+  }
+
+  .share-btns {
+    padding-top: 5rem;
+    padding-bottom: 1rem;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+  }
+
+  .share-btn {
+    display: inline-block;
+    color: #ffffff;
+    border: none;
+    padding: 0.1em 0.6em;
+    outline: none;
+    text-align: center;
+    font-size: 0.4em;
+    margin: 0 0.2em;
+  }
+
+  .share-btn:focus,
+  .share-btn:hover {
+    text-decoration: none;
+    opacity: 0.8;
+  }
+
+  .share-btn:active {
+    color: #e2e2e2;
+  }
+
+  .share-btn.twitter { background: #55acee; }
+  .share-btn.google-plus { background: #dd4b39; }
+  .share-btn.facebook { background: #3B5998; }
+  .share-btn.stumbleupon { background: #EB4823; }
+  .share-btn.reddit { background: #ff5700; }
+  .share-btn.hackernews { background: #ff6600; }
+  .share-btn.linkedin    { background: #4875B4; }
+  .share-btn.email { background: #444444; }
+
+  .btn-comment{
+
+    display: inline-block ;
+    padding:0.3em 1.2em;
+    margin:0 0.3em 0.3em 0;
+    border-radius:25em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'Roboto',sans-serif;
+    font-weight:300;
+    color:#FFFFFF;
+    background-color:#4eb5f1 ;
+    text-align:center;
+    transition: all 0.2s;
+  }
+
+
+  .btn-comment:hover{
+    background-color:#4095c6;
+  }
+
+
+  .upload{
+    left: 20%;
+  }
+
+  h6{
+    font-size: 25px;
+    text-shadow: 3px 4px black;
+    color: forestgreen;
+    text-decoration: underline;
+    padding: 0;
+
+
+  }
+  input[type="file"] {
+    display: none;
+
+  }
+  .custom-file-upload {
+    border: 1px solid black;
+    text-shadow: 1px 1px black;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    color: blue;
+    background-color: orangered;
+  }
+  .uploadbtn{
+    padding-left: 70px;
+    padding-bottom: 80px;
+  }
+
+  .submithome{
+
+    background-color: mediumpurple;
+    font-family: 'Press Start 2P';
+    padding-left: 8px;
+    padding-bottom: 4px;
+    padding-top: 4px;
+    color: red;
+    text-shadow: 2px 1px black;
+
+
+  }
+  .main-game{
+    padding-top: 30px;
+
+  }
+
+
+  .author{
+    font-size: 26px;
+    color: black;
+    font-weight: bold;
+    text-shadow: 1px 1px black;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    text-decoration: underline;
+
+    display: block;
+
+  }
+
+  .comment-body{
+    font-style: italic;
+    color: black;
+
+
+
+
+  }
+
+  .comment-box{
+    width: 300px;
+    flex-flow: column;
+    align-items: flex-end;
+    width: 100%;
+    background-color: white;
+    margin-left: 52%;
+    border-radius: 20px;
+    height: 300px;
+    overflow-y: scroll;
+    font-size: 23px;
+    margin-top: 201%;
+    text-shadow:
+  }
+
+  .comment-form{
+    padding: 30px;
+    margin-bottom: 30px;
+    text-shadow: 0px 1px black;
+    color: black;
+  }
 }
 
+/* Desktop Styles */
+@media only screen and (min-width: 961px) {
 
-.author{
-  font-size: 26px;
-  color: black;
-  font-weight: bold;
-  text-shadow: 1px 1px black;
-  margin-block-start: 0.83em;
-  margin-block-end: 0.83em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
-  text-decoration: underline;
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: darkgray;
+    background-image:url('/assets/1094283.jpg');
+    background-repeat:space;
+    background-size: cover;
+    position: relative;
+  }
 
-  display: block;
+  h5{
+    margin-bottom: 10px;
+    margin-top: -4px;
+    font-size: 11px;
+  }
 
-}
+  h2{
+    font-size: 26px;
+    color: mediumpurple;
+    padding-bottom: 30px;
+    text-shadow: 2px 2px black;
+  }
 
-.comment-body{
-font-style: italic;
-color: black;
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+  }
+
+  .game, .startScreen, .gameOverScreen{
+    position: absolute;
+    top: 215px; left: 48.5%;
+    width: 300px;
+    font-family: 'Press Start 2P';
+  }
+
+  .game{
+    top: 19%;
+  }
+
+  .gameOverScreen{
+    top: 282px;
+  }
+
+  .gameboy{
+    height: 0;
+    padding-bottom: 25%;
+    position: absolute;
+    left: 40%;
+    z-index: -1;
+  }
+
+  .action-buttons{
+    position: absolute;
+    left: 40%;
+  }
+
+  .player{
+    display: inline-block;
+    text-align: center;
+    align-items: flex-start;
+  }
+
+  p{
+    margin-top: 5px;
+    margin-bottom: 9px;
+    font-size: 11px;
+  }
+
+  .content{
+    padding-top: 0px;
+    font-size: 35px;
+    text: white;
+    font-family: 'Press Start 2P';
+    padding-bottom: 50px;
+  }
+
+  a{
+    text-decoration:none;
+    color:white;
+    padding-left: 50px;
+  }
+
+  label{
+    font-size: 15px;
+  }
+
+  .cartridge{
+    animation: slide-top 3s ease 0s 1 normal forwards;
+  }
+
+  .cartridge-container{
+    z-index: -1;
+    position: absolute;
+    margin-top: 0px;
+    padding-top: 3px;
+    left:47%;
+  }
+
+  #template{
+    z-index: auto;
+  }
+
+  @-webkit-keyframes slide-top{0%{-webkit-transform:translateY(0);transform:translateY(0)}100%{-webkit-transform:translateY(-100px);transform:translateY(-100px)}}@keyframes slide-top{0%{-webkit-transform:translateY(0);transform:translateY(0)}100%{-webkit-transform:translateY(-100px);transform:translateY(-100px)}}
+
+  button:hover{
+    border: solid black 1px;
+    background-color: red;
+  }
+  button{
+    background-color: limegreen;
+    cursor: pointer;
+  }
+
+  .resetButton{
+    background: burlywood;
+    font-family: 'Press Start 2P';
+  }
+
+  form {
+    padding-bottom: 30px;
+    padding-left:5%;
+    color: greenyellow;
+    text-shadow: 3px 3px black;
+  }
+
+  h3{
+    color: deeppink;
+    padding: 10px;
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    text-shadow: 3px 3px black;
+  }
+
+  .hoveredOption{
+    border: solid black 1px;
+    background-color: red;
+  }
+
+  .gameOverDiv{
+    padding-top: 100px;
+  }
+
+  .share-btns {
+    padding-top: 5rem;
+    padding-bottom: 1rem;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+  }
+
+  .share-btn {
+    display: inline-block;
+    color: #ffffff;
+    border: none;
+    padding: 0.1em 0.6em;
+    outline: none;
+    text-align: center;
+    font-size: 0.4em;
+    margin: 0 0.2em;
+  }
+
+  .share-btn:focus,
+  .share-btn:hover {
+    text-decoration: none;
+    opacity: 0.8;
+  }
+
+  .share-btn:active {
+    color: #e2e2e2;
+  }
+
+  .share-btn.twitter { background: #55acee; }
+  .share-btn.google-plus { background: #dd4b39; }
+  .share-btn.facebook { background: #3B5998; }
+  .share-btn.stumbleupon { background: #EB4823; }
+  .share-btn.reddit { background: #ff5700; }
+  .share-btn.hackernews { background: #ff6600; }
+  .share-btn.linkedin    { background: #4875B4; }
+  .share-btn.email { background: #444444; }
+
+  .upload{
+    left: 20%;
+  }
+
+  h6{
+    font-size: 25px;
+    text-shadow: 3px 4px black;
+    color: forestgreen;
+    text-decoration: underline;
+    padding: 0;
+    cursor: pointer;
+
+  }
+  input[type="file"] {
+    display: none;
+
+  }
+  .custom-file-upload {
+    border: 1px solid black;
+    text-shadow: 1px 1px black;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    color: blue;
+    background-color: orangered;
+  }
+  .uploadbtn{
+    padding-left: 70px;
+    padding-bottom: 80px;
+  }
+
+  .submithome{
+
+    background-color: mediumpurple;
+    font-family: 'Press Start 2P';
+    padding-left: 8px;
+    padding-bottom: 4px;
+    padding-top: 4px;
+    color: red;
+    text-shadow: 2px 1px black;
+
+
+  }
+  .main-game{
+    padding-top: 30px;
+
+  }
+
+  .author{
+    font-size: 26px;
+    color: black;
+    font-weight: bold;
+    text-shadow: 1px 1px black;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    text-decoration: underline;
+
+    display: block;
+
+  }
+
+  .comment-body{
+    font-style: italic;
+    color: black;
 
 
 
 
-}
+  }
 
-.comment-box{
-  width: 300px;
+  .comment-box{
+    /* width: 300px; */
+flex-flow: column;
+align-items: flex-end;
+width: 29%;
+background-color: white;
+margin-left: 88%;
+border-radius: 20px;
+height: 300px;
+overflow-y: scroll;
+font-size: 23px;
+margin-top: 46%;
+  }
 
-  flex-flow: column;
-  align-items: flex-end;
-  /* width: 100%; */
-  background-color: white;
-  margin-left: 950px;
-  border-radius: 20px;
-  height: 300px;
-  overflow-y: scroll;
-  font-size: 23px;
-  margin-top: 350px;
-  text-shadow: 1px 0px black;
-
-
-
-
-
-
-
-
-}
-.comment-form{
-  padding: 30px;
-  margin-bottom: 30px;
-  text-shadow: 0px 1px black;
-  color: black;
-
-
-
-
+  .comment-form{
+    padding: 30px;
+    margin-bottom: 30px;
+    text-shadow: 0px 1px black;
+    color: black;
+  }
 }
